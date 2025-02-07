@@ -2,7 +2,7 @@ import React from "react";
 import { CSSTransition } from "react-transition-group";
 import Link from "next/link";
 import clsx from "clsx";
-import { NavHeader, headerNavigation, useNavigationHeader } from "widgets/header/lib";
+import { NavHeader, useNavigationHeader } from "widgets/header/lib";
 import ArrowDownIcon from "shared/icons/ArrowDown.icon";
 import ArrowLinkIcon from "shared/icons/ArrowLink.icon";
 import { NavLink } from "shared/lib/types/navigation.types";

@@ -1,0 +1,29 @@
+{
+  "extends": [
+      "next/core-web-vitals", 
+      "prettier",
+      "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "svg-jsx"],
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "rules": {
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "spaced-comment": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/prefer-as-const": "warn",
+      "@typescript-eslint/no-empty-function": "warn",
+      "react/no-children-prop": "off",
+      "require-await": "warn",
+      "react-hooks/exhaustive-deps": "off",
+      "react/display-name": "off",
+      "svg-jsx/camel-case-dash": "warn",
+      "svg-jsx/camel-case-colon": "warn",
+      "svg-jsx/no-style-string": "warn"
+
+  }
+}
