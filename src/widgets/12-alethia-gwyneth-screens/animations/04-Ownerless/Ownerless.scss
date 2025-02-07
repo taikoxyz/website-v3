@@ -1,0 +1,37 @@
+.ownerless {
+    max-width: 334px;
+}
+
+.ownerless-block {
+    transition: transform 1.5s ease;
+}
+
+.features-item {
+    @include screen-lg {
+        &:hover {
+            .ownerless-block {
+                transform: translateY(-100%);
+            }
+        }
+    }
+    @include -screen-lg {
+        .ownerless-block {
+            animation: ownerlessTransform 4s ease infinite
+        }
+    }
+}
+
+@keyframes ownerlessTransform {
+    0%,
+    10% {
+        transform: translateY(0);
+    }
+    40%,
+    60% {
+        transform: translateY(-100%);
+    }
+    80%,
+    100% {
+        transform: translateY(-200%);
+    }
+}

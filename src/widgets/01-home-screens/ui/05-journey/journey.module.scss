@@ -1,0 +1,129 @@
+.journey_content {
+    background: #10151b;
+    // padding: 185px 20px 150px;
+    padding: 30px 20px 50px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.journey_label {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, #fff);
+    text-transform: uppercase;
+}
+
+.journey_title {
+    margin-top: 30px;
+    text-align: center;
+    max-width: 7.7em;
+    @include setFontClashGrotest500(70px, 0.9, -0.02em, #fff);
+}
+
+.journey_roadmap {
+    width: 891px;
+    margin-top: 150px;
+    position: relative;
+
+    :global(.journey-path) {
+        stroke-dasharray: 1164;
+        stroke-dashoffset: 1164;
+    }
+}
+.journey_24q2 {
+    width: 13.75em;
+    position: absolute;
+    left: -8%;
+    bottom: 95%;
+    z-index: 2;
+    transform-origin: left center;
+    transform: skewY(-18deg) scale(1.0001);
+}
+.journey_24q3 {
+    position: absolute;
+    right: 17%;
+    bottom: 91.8%;
+    z-index: 2;
+    width: 17.5em;
+    transform: skewY(-16deg) scale(1.0001);
+}
+.journey_24q4 {
+    position: absolute;
+    bottom: 64.5%;
+    right: 48%;
+    width: 14.0625em;
+    transform: skewY(-5deg) scale(1.0001);
+}
+.journey_25q1 {
+    position: absolute;
+    width: 12.5em;
+
+    left: 28%;
+    bottom: 39.5%;
+    transform: skewY(-5deg) scale(1.0001);
+}
+
+.journey_25q2 {
+    position: absolute;
+    width: 15em;
+    right: 5%;
+    bottom: 20.6%;
+    transform: skewY(-4.8deg) scale(1.0001);
+}
+.journey_25h1 {
+    position: absolute;
+    width: 13.75em;
+    bottom: 0%;
+    left: 21%;
+    transform: skewY(-5deg) scale(1.0001);
+}
+
+@include -screen-xl {
+    .journey_title {
+        font-size: 58px;
+    }
+}
+
+@include -screen-lg {
+    .journey_roadmap {
+        width: 680px;
+    }
+}
+
+@include -screen-md {
+    .journey_24q2 {
+        left: 18%;
+        bottom: 94%;
+        transform: skewY(-17deg) scale(1.0001);
+    }
+    .journey_title {
+        font-size: 52px;
+    }
+}
+
+@include -screen-sm {
+    .journey_content {
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+    .journey_roadmap {
+        width: 576px;
+    }
+    .journey_25q2 {
+        right: 13%;
+        bottom: 19.8%;
+    }
+    .journey_title {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 359.98px) {
+    .journey_title {
+        font-size: 36px;
+    }
+    .journey_roadmap {
+        width: 480px;
+    }
+}

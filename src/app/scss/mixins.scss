@@ -1,0 +1,341 @@
+@mixin fontCreate($name, $weight, $url, $ttf: true, $style: normal) {
+    @font-face {
+        font-family: $name;
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+        @if $ttf {
+            src: url('#{$url}.woff2') format('woff2'), url('#{$url}.woff') format('woff'),
+                url('#{$url}.ttf') format('truetype'),
+                url('#{$url}.eot') format('embedded-opentype');
+        } @else {
+            src: url('#{$url}.woff2') format('woff2'), url('#{$url}.woff') format('woff'),
+                url('#{$url}.otf') format('opentype'),
+                url('#{$url}.eot') format('embedded-opentype');
+        }
+    }
+}
+
+@mixin setImageQuality {
+    image-rendering: -moz-crisp-edges; /* Firefox        */
+    image-rendering: -o-crisp-edges; /* Opera          */
+    image-rendering: -webkit-optimize-contrast; /* Safari         */
+    image-rendering: optimize-contrast; /* CSS3 Proposed  */
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+@mixin setCoveredImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@mixin setAcceleration {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+
+@mixin setTextLinesOverflow($lines: 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin scaleLaptopToTabletSizes() {
+    @media (min-width: ($tablet + 1)) and (max-width: $laptop_big) {
+        @content;
+    }
+}
+
+@mixin setTextGradient($color) {
+    background: $color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin setStrokeGradient($background: #fff, $stroke) {
+    border: 2px solid transparent;
+    background: $background, $stroke;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+@mixin getMediaBetween($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@function getPercentSize($size, $per) {
+    @return $size * calc($per / 100);
+}
+
+@function fullWidth($containerW: 1305px, $paddingW: 40px) {
+    @return calc(100% + (((100vw - 103px) - $containerW) / 2) + $paddingW);
+}
+
+@function calcTransition($duration: 1000ms, $function: linear, $delay: 0) {
+    @if ($delay == 0) {
+        @return $duration $function 0ms;
+    }
+    $dur: $duration * (1 - $delay / 1000);
+    $del: $duration * ($delay / 1000);
+
+    @return $dur $function $del;
+}
+
+@mixin setFlexedGrid($cols, $gap) {
+    flex: 0 0 calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+    max-width: calc(#{100% / $cols} - #{$gap * ($cols - 1) / $cols}px);
+}
+
+@mixin setGrid($cols, $gapRow, $gapCol: $gapRow, $selector: li) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: #{$gapCol}px #{$gapRow}px;
+
+    > #{$selector} {
+        @include setFlexedGrid($cols, $gapRow);
+    }
+}
+
+
+/* Queries */
+@mixin screen-xs {
+    @media screen and (min-width: $xs) {
+        @content;
+    }
+}
+
+@mixin screen-sm {
+    @media screen and (min-width: $sm) {
+        @content;
+    }
+}
+
+@mixin screen-md {
+    @media screen and (min-width: $md) {
+        @content;
+    }
+}
+
+@mixin screen-lg {
+    @media screen and (min-width: $lg) {
+        @content;
+    }
+}
+
+@mixin screen-xl {
+    @media screen and (min-width: $xl) {
+        @content;
+    }
+}
+
+@mixin screen-xxl {
+    @media screen and (min-width: $xxl) {
+        @content;
+    }
+}
+
+@mixin screen-xxxl {
+    @media screen and (min-width: $xxxl) {
+        @content;
+    }
+}
+
+
+/* Queries min */
+
+@mixin -screen-xs {
+    @media screen and (max-width: ($xs - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-sm {
+    @media screen and (max-width: ($sm - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-md {
+    @media screen and (max-width: ($md - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-lg {
+    @media screen and (max-width: ($lg - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xl {
+    @media screen and (max-width: ($xl - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xxl {
+    @media screen and (max-width: ($xxl - 0.2)) {
+        @content;
+    }
+}
+
+@mixin -screen-xxxl {
+    @media screen and (max-width: ($xxxl - 0.2)) {
+        @content;
+    }
+}
+
+// Colors
+@function getColorPink($opacity: 1) {
+    @return rgba($kColorPink, $opacity);
+}
+
+@function getColorBlack($opacity: 1) {
+    @return rgba($kColorBlack, $opacity);
+}
+
+@function getColorGray($opacity: 1) {
+    @return rgba($kColorGray, $opacity);
+}
+
+@function getColorThemeWhite($opacity: 1) {
+    @return rgba($kColorThemeWhite, $opacity);
+}
+
+@function getColorStrictWhite($opacity: 1) {
+    @return rgba($kColorStrictWhite, $opacity);
+}
+
+@function getColorStrictBlack($opacity: 1) {
+    @return rgba($kColorStrictBlack, $opacity);
+}
+
+// Fonts
+
+@mixin setFontDefault(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 700 $font-size/#{$leading} $default-font;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontPublicSans400(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 400 $font-size/#{$leading} $kFontPublicSans;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontPublicSans500(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 500 $font-size/#{$leading} $kFontPublicSans;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontPublicSans600(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 600 $font-size/#{$leading} $kFontPublicSans;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontHelvetica500(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 500 $font-size/#{$leading} $kFontHelveticaNeue;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontOnest500(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 500 $font-size/#{$leading} $kFontOnest;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontGilroy500(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 500 $font-size/#{$leading} $kFontGilroy;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontClashGrotest500(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 500 $font-size/#{$leading} $kFontClashGrotesk;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}
+
+@mixin setFontClashGrotest600(
+    $font-size: 16px,
+    $leading: 1.25,
+    $letterSpacing: normal,
+    $color: false
+) {
+    font: 600 $font-size/#{$leading} $kFontClashGrotesk;
+    letter-spacing: $letterSpacing;
+    @if ($color) {
+        color: $color;
+    }
+}

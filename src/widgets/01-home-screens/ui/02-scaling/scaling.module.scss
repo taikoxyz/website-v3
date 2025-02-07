@@ -1,0 +1,248 @@
+.scaling {
+    overflow: hidden;
+    position: relative;
+}
+.scalling_wrapper {
+    display: flex;
+    width: fit-content;
+}
+.scaling_screen {
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    h2 {
+        @include setFontClashGrotest500(85px, 0.8, -0.02em, getColorBlack());
+
+        span {
+            color: getColorPink();
+        }
+    }
+
+    &:first-of-type {
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            height: 100%;
+            background: #f8f8f8;
+            z-index: -1;
+        }
+    }
+}
+.scaling_canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+}
+.scaling_lines {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 78vw;
+    width: 340vw;
+    min-width: 340vw;
+    opacity: 0.5;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+.scaling_rays {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(40vw, -50%);
+    width: 350vw;
+    // height: 100vh;
+    // max-height: 800px;
+    pointer-events: none;
+}
+
+.scaling_main {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.scaling_main_iconWrapper {
+    position: relative;
+    width: 305px;
+}
+.scaling_main_iconMover {
+    width: 100%;
+}
+.scaling_main_icon {
+    width: 100%;
+    transform-origin: center;
+}
+
+.scaling_main_eth {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    svg {
+        opacity: 0;
+    }
+}
+
+.scaling_main_label {
+    margin-top: 80px;
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+    text-transform: uppercase;
+    text-align: center;
+}
+.scaling_main_title {
+    margin-top: 40px;
+    text-align: center;
+}
+
+// Dao
+.scaling_dao {
+    max-width: 1010px;
+    padding: 0 20px 120px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.scaling_dao_title {
+    margin-top: auto;
+}
+.scaling_dao_btn {
+    margin-top: 24px;
+}
+
+// Token
+.scaling_token {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.scaling_token_btn {
+    margin-top: 24px;
+}
+
+// Community
+.scaling_community {
+    max-width: 1380px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+}
+.scaling_community_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.scaling_community_btn {
+    margin-top: 24px;
+}
+
+@include screen-lg {
+    @media screen and (max-height: 820px) {
+        .scaling_screen {
+            h2 {
+                font-size: 68px;
+            }
+
+            &:first-of-type {
+                &::after {
+                    width: 320px;
+                }
+            }
+        }
+        .scaling_main_iconWrapper {
+            width: 238px;
+        }
+    }
+}
+
+@include -screen-lg {
+    .scaling_screen {
+        h2 {
+            font-size: 68px;
+        }
+
+        &:first-of-type {
+            &::after {
+                width: 320px;
+            }
+        }
+    }
+    .scaling_main_iconWrapper {
+        width: 238px;
+    }
+    .scaling_rays {
+    }
+}
+
+@include -screen-md {
+    .scaling_screen {
+        h2 {
+            font-size: 55px;
+        }
+
+        &:first-of-type {
+            &::after {
+                width: 260px;
+            }
+        }
+    }
+    .scaling_main_label {
+        font-size: 12px;
+    }
+    .scaling_main_iconWrapper {
+        width: 228px;
+    }
+}
+
+@include -screen-sm {
+    .scaling_rays {
+        max-height: 500px;
+    }
+    .scaling_screen:not(:first-of-type) {
+        width: 150vw;
+    }
+    .scaling_rays {
+        width: 480vw;
+    }
+    .scaling_community {
+        padding-right: 12vw;
+    }
+    .scaling_dao {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 389.98px) {
+    .scaling_main_iconWrapper {
+        width: 190px;
+    }
+}

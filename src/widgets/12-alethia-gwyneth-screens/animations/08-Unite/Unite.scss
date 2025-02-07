@@ -1,0 +1,63 @@
+.unite {
+    max-width: 325px;
+    width: 100%;
+}
+.unite-triangle-right {
+    margin-left: -4px;
+}
+
+@include screen-lg {
+    .unite-triangle-left {
+        transform: translateX(-8%);
+        transition: transform 750ms ease;
+    }
+    .unite-triangle-right {
+        transform: translateX(8%);
+        transition: transform 750ms ease;
+    }
+    .features-item {
+        &:hover {
+            .unite-triangle-left,
+            .unite-triangle-right {
+                transform: translate(0);
+            }
+        }
+    }
+}
+
+@include -screen-lg {
+    .features-item {
+        .unite-triangle-left {
+            animation: triangleLeft 3s ease infinite;
+        }
+        .unite-triangle-right {
+            animation: triangleRight 3s ease infinite;
+        }
+    }
+}
+
+@keyframes triangleLeft {
+    0%,
+    10%,
+    80%,
+    100% {
+        transform: translateX(-8%);
+    }
+    40%,
+    60% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes triangleRight {
+    0%,
+    10%,
+    80%,
+    100% {
+        transform: translateX(8%);
+    }
+    40%,
+    60% {
+        transform: translateX(0%);
+    }
+}

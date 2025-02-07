@@ -1,0 +1,91 @@
+.governance {
+    overflow: hidden;
+    padding: 150px 0 80px;
+    background: #FFF;
+    background-image: radial-gradient(
+        circle at 2px 2px,
+        getColorBlack(0.1) 0px,
+        getColorBlack(0.1) 2px,
+        #FFF 2px,
+        #FFF
+    );
+    background-size: 48px 48px;
+}
+.governance_container {
+    max-width: 1135px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include -screen-xl {
+        padding: 0 24px;
+    }
+    @include -screen-lg {
+        padding: 0 16px;
+    }
+}
+
+.governance_label {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+    text-transform: uppercase;
+}
+
+.governance_title {
+    margin-top: 44px;
+    text-align: center;
+    max-width: 8.5em;
+    @include setFontClashGrotest500(70px, 0.9, -0.02em, getColorBlack());
+}
+
+.governance_text {
+    margin-top: 32px;
+    max-width: 570px;
+    @include setFontPublicSans400(16px, 1.255, -0.01em, getColorBlack());
+    text-align: center;
+}
+
+.governance_video {
+    min-width: 760px;
+    width: 100%;
+    clip-path: inset(2px 2px);
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: center bottom;
+    mix-blend-mode: darken;
+}
+
+@include -screen-xl {
+    .governance_title {
+        font-size: 62px;
+    }
+}
+
+@include -screen-lg {
+    .governance_label {
+        font-size: 12px;
+    }
+    .governance_title {
+        margin-top: 32px;
+        font-size: 56px;
+    }
+}
+
+@include -screen-sm {
+    .governance_title {
+        margin-top: 24px;
+        font-size: 40px;
+    }
+}
+
+@include -screen-xs {
+    .governance {
+        padding-top: 80px;
+    }
+    .governance_video {
+        min-width: 670px;
+    }
+}

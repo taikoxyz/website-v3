@@ -1,0 +1,32 @@
+.list {
+    @include setGrid(4, 24);
+}
+
+.list_item {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: $kLaptopM) {
+    .list {
+        @include setGrid(3, 24);
+    }
+}
+
+@media screen and (max-width: $kTabletXXL) {
+    .list {
+        @include setGrid(2, 24);
+    }
+}
+
+@media screen and (max-width: $kTabletM) {
+    .list {
+        @include setGrid(2, 12);
+    }
+}
+
+@media screen and (max-width: $kMobileXXL) {
+    .list {
+        @include setGrid(1, 18);
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "hero": {
+        "title": "Welcome to <span>Taiko Grants!</span>",
+        "text": "Taiko Grants is a milestone-based grants program designed to discover and support innovative projects and community members that advance the Taiko ecosystem. This program provides financial incentives and developer resources to bring builders’ visions to life."
+    },
+    "keyDates": {
+        "title": "Key Dates",
+        "dateTitle": "date",
+        "descriptionTitle": "description",
+        "items": [
+            {
+                "date": "Sep 25th, 2024",
+                "description": "Welcome to The Grant Factory, where innovation meets opportunity in the Taiko Ecosystem. Find out more here: https://dorahacks.io/hackathon/grant-factory/detail"
+            }
+        ]
+    },
+    "mission": {
+        "title": "Taiko Grants' <span>mission</span>",
+        "items": [
+            {
+                "icon": "/img/grant/mission-icon-1.svg",
+                "title": "Discover and support innovative, talented, and value-aligned developers",
+                "text": "Providing developers who build up and build on the Taiko ecosystem the financial incentives and resources needed to bring their products and services to life."
+            }, {
+                "icon": "/img/grant/mission-icon-2.svg",
+                "title": "Enable and encourage developers to build",
+                "text": "Assisting developers in building novel applications or infrastructure products to draw new users to the Taiko ecosystem."
+            }, {
+                "icon": "/img/grant/mission-icon-3.svg",
+                "title": "Help onboard established projects",
+                "text": "Bringing the projects that everyone loves to Taiko and helping them attract new users through continuous support."
+            }, {
+                "icon": "/img/grant/mission-icon-4.svg",
+                "title": "Attract passionate community members",
+                "text": "Finding active community members who share Taiko’s goals and involving them in the Taiko Grants program decision-making."
+            }
+        ]
+    },
+    "community": {
+        "suptitle": "Community-first approach",
+        "title": "We believe <span>deeply</span> in the power of the open-source community, particularly Ethereum’s, and welcome all builders who share this vision and believe in a more <span>equitable</span>, <span>permissionless</span>, and <span>transparent future</span>",
+        "text": "We also recognize that Taiko (or any blockchain, for that matter) would be nothing without its builders and community, and so we see our grantees as integral extensions of the Taiko team. As we look to transition from Taiko Labs into the Taiko Foundation and Taiko DAO, we expect the line between full-time engineers and community builders to become even more blurry. \nIn conjunction with launching our grant program, we also seek to experiment with the grant framework itself. That can mean the duration, style, council/decision-making body, and much more is up for experimentation and iteration. For grants and all ecosystem incentive programs, we are driven by our desire to achieve the best outcomes for the Taiko network — how we get there and who leads the way is something we want to shape together with you and the community.Hence, this is only the start of what we hope will be a long and educational journey for our community. \nFor now, if you have ideas on grant frameworks, we’d like to have this conversation with you on our community forum. Please share your frameworks — as detailed or brief as you see fit — as responses to the <u>grant thread</u> on our community forum.",
+        "learnMore": "Learn more about Grants Council"
+    },
+    "track": {
+        "title": "Grant Tracks",
+        "applyNow": "Apply now",
+        "items": [
+            {
+                "icon": "/img/grant/track-icon-1.svg",
+                "title": "Community",
+                "track": "Track",
+                "link": "https://app.charmverse.io/taiko/partner-track-9459862254384057",
+                "text": "The Community Track is aimed at builders and early-stage projects that are being, or have been, built on Taiko. We’re looking to see what grassroots Taiko community builders have been up to lately. It could be anything from gaming, media, community, to ZKP applications or AI — everything is welcome!",
+                "timeline": "The Community Track is <b>Closed</b>",
+                "active": false
+            }, 
+            {
+                "icon": "/img/grant/track-icon-2.svg",
+                "title": "Partner",
+                "track": "Track",
+                "link": "https://app.charmverse.io/taiko/partner-track-9459862254384057",
+                "text": "The Partner Track is aimed at established and mature projects or service providers. This track is suitable for projects that are already live, have some active users, and a sizeable community. <br/><br/> The track could also be suitable for a crypto service provider that is looking to integrate, support, or deploy on Taiko and would like to make a grant application. The goal is to onboard the projects/service providers everyone knows and loves to Taiko and make them feel at home.",
+                "timeline": "The Partner Track is <b>Open</b>",
+                "active": true
+            }, 
+            {
+                "icon": "/img/grant/track-icon-3.svg",
+                "title": "Request for Proposal (RFP)",
+                "track": "Track",
+                "link": "https://app.charmverse.io/taiko/request-for-proposal-rfp-track-8186138497093947",
+                "text": "The RFP Track is aimed at experienced builders or teams who want to work on high-impact projects that are submitted by Taiko Labs. These will typically be specific requests for features or solutions that relate to the Taiko protocol or ecosystem. The Taiko team will submit such requests, as and when needed, and invite proposals from the community. <br/><br/>A list of our current RFPs can be found <u>here</u> and applications are open to anyone, including established teams and prior grantees.",
+                "timeline": "The RFPs Track is <b>Open</b>",
+                "active": true
+            }
+        ]
+    },
+    "support": {
+        "title": "Support and <span>FAQs</span>",
+        "text": "If you have any questions, join our <u>Discord</u> or ask in the <u>Taiko community forum</u>.",
+        "faqs": [
+            {
+                "q": "Are startups or new ventures eligible for grants?",
+                "a": "Absolutely! As long as the project aligns with the mission and the specified criteria. Projects aiming to be open source or public goods are especially encouraged to apply for the Community Track."
+            }, {
+                "q": "How many grants are typically awarded in each track?",
+                "a": "There isn't a fixed number. It's based on the quality and relevance of applications received."
+            }, {
+                "q": "How should I determine the grant amount to request?",
+                "a": "Request what aligns with your project's needs, keeping in mind our mission and the potential impact. If the Grants Council asks you to justify the amount, be ready to give good reasons for your ask."
+            }, {
+                "q": "After submitting my proposal, what can I expect?",
+                "a": "Once you submit your proposal, the Grants Council will review it and come back to you with suggestions on how to improve your application, follow-up questions, and/or requests for a call. It's crucial to be responsive during this phase!"
+            }
+        ]
+    },
+    "banner": {
+        "title": "Learn more about application process",
+        "learnMore": "Learn more"
+    }
+}

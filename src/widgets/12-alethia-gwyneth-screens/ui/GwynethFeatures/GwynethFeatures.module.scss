@@ -1,0 +1,115 @@
+.features {
+    padding: 40px 0 30px;
+}
+
+.features_suptitle {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, #000);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+}
+
+.features_wrapper {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features_item {
+    background: #FFF;
+    border-radius: 10px;
+
+    padding: 28px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+
+    @include screen-lg {
+        &:nth-child(1) {
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 2;
+        }
+    
+        &:nth-child(2) {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+        }
+    
+        &:nth-child(3) {
+            grid-column: 3 / span 1;
+            grid-row: 1 / span 2;
+        }
+    }
+}
+.features_animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.features_item_top {
+    padding-bottom: 28px;
+}
+.features_item_index {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+}
+.features_item_title {
+    margin-top: 24px;
+    @include setFontClashGrotest500(50px, 0.9, normal, #191e28);
+}
+.features_item_text {
+    padding-top: 28px;
+    @include setFontPublicSans400(18px, 1.255, -0.01em, getColorBlack());
+}
+
+@media screen and (max-width: 1720px) {
+    .features_item_title {
+        font-size: 42px;
+    }
+}
+
+@include -screen-xxl {
+    .features_animation {
+        max-height: 200px;
+    }
+    .features_item_title {
+        font-size: 36px;
+    }
+}
+
+@include -screen-lg {
+    .features_wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@include -screen-md {
+    .features_wrapper {
+        grid-template-columns: 1fr;
+    }
+    .features_suptitle {
+        text-align: center;
+    }
+}
+
+@include -screen-sm {
+    .features_item {
+        padding: 21px 21px 24px;
+        border-radius: 20px;
+    }
+    .features_animation {
+        max-height: 190px;
+    }
+    .features_item_title {
+        font-size: 36px;
+    }
+    .features_item_text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 359.98px) {
+    .features_item_title {
+        font-size: 28px;
+    }
+}

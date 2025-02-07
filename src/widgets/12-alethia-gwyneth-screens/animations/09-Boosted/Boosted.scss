@@ -1,0 +1,37 @@
+.boosted {
+    max-width: 349px;
+}
+.boosted-plus {
+    stroke-dasharray: 41 41;
+    stroke-dashoffset: -41;
+    transition: stroke-dashoffset 1s ease;
+}
+
+@include screen-lg {
+    .features-item:hover {
+        .boosted-plus {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+@include -screen-lg {
+    .features-item .boosted-plus {
+        animation: boostedPlus 2.5s ease infinite
+    }
+}
+
+@keyframes boostedPlus {
+    0%,
+    10% {
+        stroke-dashoffset: -41;
+    }
+    40%,
+    60% {
+        stroke-dashoffset: 0;
+    }
+    80%,
+    100% {
+        stroke-dashoffset: 41;
+    }
+}

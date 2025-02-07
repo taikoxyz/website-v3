@@ -1,0 +1,22 @@
+.socials {
+    display: flex;
+    gap: 15px;
+
+    &_link {
+        width: 32px;
+        height: 32px;
+
+        font-size: 0;
+
+        transition: opacity 0.2s ease;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+.explore {
+    padding: 30px 0;
+}
+.explore_wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.explore_image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    height: 655px;
+}
+.explore_content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 840px;
+    padding-left: 22px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 44px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #fff;
+    }
+}
+.explore_suptitle {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+    text-transform: uppercase;
+    background: #fff;
+
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 0 20px 0 0;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: transparent;
+        border-radius: 0 0 0 20px;
+        box-shadow: -10px 10px 0 10px #fff;
+    }
+
+    &::before {
+        left: -22px;
+        bottom: 100%;
+    }
+
+    &::after {
+        left: 100%;
+        bottom: 0;
+    }
+}
+.explore_title {
+    margin-top: 20px;
+    @include setFontClashGrotest500(60px, 1.1, -0.02em, #22282b);
+    padding-right: 24px;
+    position: relative;
+    z-index: 2;
+    box-decoration-break: clone;
+    filter: url("#goo");
+    background: #fff;
+    display: inline;
+}
+.explore_text {
+    max-width: 320px;
+    @include setFontPublicSans400(16px, 1.255, -0.01em, getColorBlack(0.8));
+    background: #fff;
+    padding: 20px 0;
+    padding-right: 20px;
+    position: relative;
+    display: inline-block;
+
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left: 100%;
+        background: transparent;
+        border-radius: 20px 0 0 0;
+        box-shadow: -0.5em -0.5em 0 0.5em #fff;
+    }
+
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+    }
+}
+
+@include screen-lg {
+    @media screen and (max-height: 780px) {
+        .explore_image {
+            height: 580px;
+        }
+        .explore_title {
+            font-size: 52px;
+        }
+    }
+}
+
+@include -screen-xl {
+    .explore_title {
+        font-size: 48px;
+    }
+}
+@include -screen-md {
+    .explore_wrapper {
+        border: none;
+    }
+    .explore_content {
+        padding-left: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > br {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+    .explore_image {
+        height: 90vw;
+    }
+    .explore_suptitle {
+        max-width: 265px;
+        padding: 0 40px;
+        text-align: center;
+        padding: 0;
+        background: transparent;
+        margin-top: -25px;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 265px;
+            height: 44px;
+            background: url("/img/alethia/explore-suptitle-shape.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            border: none;
+            box-shadow: none;
+            position: absolute;
+            left: 0;
+            top: auto;
+            right: auto;
+            z-index: -1;
+            bottom: 0;
+            transform: translateY(-5px);
+        }
+    }
+    .explore_title {
+        margin-top: 30px;
+        filter: none;
+        display: block;
+        background-color: transparent;
+        text-align: center;
+        font-size: 36px;
+        padding: 0;
+        max-width: 500px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .explore_text {
+        margin-top: 30px;
+        background: transparent;
+        text-align: center;
+        padding: 0;
+
+        &::before,
+        &::after {
+            display: none !important;
+        }
+    }
+}
+
+@include -screen-sm {
+    .explore_title {
+        font-size: 32px;
+    }
+}

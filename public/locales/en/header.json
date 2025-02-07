@@ -1,0 +1,113 @@
+{
+    "navigation": [
+        { 
+            "name": "Build",
+            "suptitle": "Solution",
+            "links": [
+                { 
+                    "name": "Solutions", 
+                    "url": "/solutions", 
+                    "icon": "/img/icons/nav-solutions.svg"
+                },
+                { 
+                    "name": "Bridge", 
+                    "url": "https://bridge.taiko.xyz/", 
+                    "icon": "/img/icons/nav-bridge.svg" 
+                }, { 
+                    "name": "Documentation", 
+                    "url": "https://docs.taiko.xyz/start-here/getting-started",
+                    "icon": "/img/icons/nav-docs.svg" 
+                }, { 
+                    "name": "Explorers", 
+                    "url": "/",
+                    "icon": "/img/icons/nav-explorer.svg" 
+                }, { 
+                    "name": "taikoscan.network", 
+                    "subtitle": "by Routescan",
+                    "url": "https://taikoscan.network/"
+                }, { 
+                    "name": "taikoscan.io", 
+                    "subtitle": "by Etherscan",
+                    "url": "https://taikoscan.io/"
+                }, { 
+                    "name": "taikoscan.net",
+                    "subtitle": "by Socialscan", 
+                    "url": "https://taikoscan.net/"
+                }, {
+                    "name": "taikonow.xyz",
+                    "subtitle": "by ZKPool",
+                    "url": "https://taikonow.xyz/"
+                }
+            ] 
+        }, { 
+            "name": "Explore",
+            "links": [
+                { 
+                    "name": "Ecosystem", 
+                    "url": "/ecosystem", 
+                    "icon": "/img/icons/nav-ecosystem.svg" 
+                }, {
+                    "name": "Status", 
+                    "url": "https://status.taiko.xyz/", 
+                    "icon": "/img/icons/nav-status.svg" 
+                }, {
+                    "name": "Blog", 
+                    "url": "/blog", 
+                    "icon": "/img/icons/nav-blog.svg" 
+                }, { 
+                    "name": "Grants", 
+                    "url": "/grant-program",
+                    "icon": "/img/icons/nav-grants.svg" 
+                }
+            ] 
+        }, { 
+            "name": "Contribute",
+            "links": [
+                { 
+                    "name": "About Us", 
+                    "url": "/about", 
+                    "icon": "/img/icons/nav-about.svg" 
+                },
+                { 
+                    "name": "Brand Kit", 
+                    "url": "/brand-assets", 
+                    "icon": "/img/icons/nav-brandkit.svg" 
+                },
+                { 
+                    "name": "Careers", 
+                    "url": "/careers", 
+                    "icon": "/img/icons/nav-careers.svg" 
+                }
+            ] 
+        }, { 
+            "name": "Engage",
+            "links": [
+                { 
+                    "name": "Trailblazer", 
+                    "url": "https://trailblazers.taiko.xyz/", 
+                    "icon": "/img/icons/nav-trailblazer.svg" 
+                }, { 
+                    "name": "Snaefell NFT",
+                    "url": "https://snaefellnft.taiko.xyz/",
+                    "icon": "/img/icons/nav-snaefell.svg"
+                }, {
+                    "name": "Taikoons NFT",
+                    "url": "https://taikoons.taiko.xyz/",
+                    "icon": "/img/icons/nav-taikoons.svg"
+                }
+            ] 
+        }
+    ],
+    "socials": [
+        {
+            "icon": "socials:github",
+            "url": "https://github.com/taikoxyz"
+        },{
+            "icon": "socials:twitter",
+            "url": "https://twitter.com/taikoxyz"
+        }, {
+            "icon": "socials:discord",
+            "url": "https://discord.com/invite/taikoxyz"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+<svg width="119" height="385" viewBox="0 0 119 385" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_200_3313)">
+<mask id="path-1-inside-1_200_3313" fill="white">
+<path d="M0 0H119V385H0V0Z"/>
+</mask>
+<line x1="-60.3501" y1="45.124" x2="135.129" y2="-46.0295" stroke="black"/>
+<line x1="-60.3501" y1="276.513" x2="135.129" y2="185.359" stroke="black"/>
+<line x1="-60.3501" y1="160.818" x2="135.129" y2="69.6649" stroke="black"/>
+<line x1="-60.3501" y1="392.207" x2="135.129" y2="301.054" stroke="black"/>
+<line x1="-60.3501" y1="61.6513" x2="135.129" y2="-29.5021" stroke="black"/>
+<line x1="-60.3501" y1="293.04" x2="135.129" y2="201.887" stroke="black"/>
+<line x1="-60.3501" y1="177.346" x2="135.129" y2="86.1922" stroke="black"/>
+<line x1="-60.3501" y1="408.734" x2="135.129" y2="317.581" stroke="black"/>
+<line x1="-60.3501" y1="78.1787" x2="135.129" y2="-12.9748" stroke="black"/>
+<line x1="-60.3501" y1="309.568" x2="135.129" y2="218.415" stroke="black"/>
+<line x1="-60.3501" y1="193.874" x2="135.129" y2="102.721" stroke="black"/>
+<line x1="-60.3501" y1="425.263" x2="135.129" y2="334.109" stroke="black"/>
+<line x1="-60.3501" y1="94.707" x2="135.129" y2="3.55352" stroke="black"/>
+<line x1="-60.3501" y1="326.096" x2="135.129" y2="234.942" stroke="black"/>
+<line x1="-60.3501" y1="210.401" x2="135.129" y2="119.248" stroke="black"/>
+<line x1="-60.3501" y1="441.79" x2="135.129" y2="350.637" stroke="black"/>
+<line x1="-60.3501" y1="111.234" x2="135.129" y2="20.0809" stroke="black"/>
+<line x1="-60.3501" y1="342.624" x2="135.129" y2="251.471" stroke="black"/>
+<line x1="-60.3501" y1="226.929" x2="135.129" y2="135.775" stroke="black"/>
+<line x1="-60.3501" y1="458.318" x2="135.129" y2="367.165" stroke="black"/>
+<line x1="-60.3501" y1="127.763" x2="135.129" y2="36.6092" stroke="black"/>
+<line x1="-60.3501" y1="359.151" x2="135.129" y2="267.998" stroke="black"/>
+<line x1="-60.3501" y1="243.457" x2="135.129" y2="152.304" stroke="black"/>
+<line x1="-60.3501" y1="474.846" x2="135.129" y2="383.692" stroke="black"/>
+<line x1="-60.3501" y1="144.29" x2="135.129" y2="53.1365" stroke="black"/>
+<line x1="-60.3501" y1="375.679" x2="135.129" y2="284.525" stroke="black"/>
+<line x1="-60.3501" y1="259.984" x2="135.129" y2="168.831" stroke="black"/>
+</g>
+<path d="M0 1H119V-1H0V1ZM119 384H0V386H119V384Z" fill="black" mask="url(#path-1-inside-1_200_3313)"/>
+<defs>
+<clipPath id="clip0_200_3313">
+<path d="M0 0H119V385H0V0Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

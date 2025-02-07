@@ -1,0 +1,41 @@
+.migrate {
+    max-width: 251px;
+}
+.migrate-stroke {
+    stroke-dasharray: 608 608;
+    stroke-dashoffset: 608;
+    transition: stroke-dashoffset 0.75s ease-in;
+}
+
+.features-item {
+    @include screen-lg {
+        &:hover .migrate-stroke {
+            stroke-dashoffset: 0;
+            transition-duration: 1.2s;
+
+            &:nth-child(2) { transition-delay: 0.05s; }
+            &:nth-of-type(3) { transition-delay: 0.1s; }
+            &:nth-of-type(4) { transition-delay: 0.15s; }
+        }
+    }
+    @include -screen-lg {
+        .migrate-stroke {
+            animation: migrateStroke 6s ease infinite;
+            &:nth-child(2) { animation-delay: 0.05s; }
+            &:nth-of-type(3) { animation-delay: 0.1s; }
+            &:nth-of-type(4) { animation-delay: 0.15s; }
+        }
+    }
+}
+
+@keyframes migrateStroke {
+    0%, 10% {
+        stroke-dashoffset: 608;
+    }
+    40%, 60% {
+        stroke-dashoffset: 0;
+    }
+    80%, 100% {
+        stroke-dashoffset: -608;
+    }
+}

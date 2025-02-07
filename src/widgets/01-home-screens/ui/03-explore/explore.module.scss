@@ -1,0 +1,463 @@
+.explore {
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+
+    &._right {
+        .explore_taiko::before,
+        .explore_taiko_image::before {
+            opacity: 0;
+        }
+        .explore_taiko::after,
+        .explore_taiko_image::after {
+            opacity: 1;
+        }
+        .explore_right {
+            background-color: rgba(#a3a3a3, 0.1);
+        }
+        .explore_left {
+            .explore_taiko_image img {
+                opacity: 0;
+            }
+
+            &::before {
+                opacity: 0;
+            }
+        }
+        @include screen-md {
+            .explore_item {
+                &:nth-child(1) {
+                    .explore_title {
+                        opacity: 0.1;
+                    }
+                    .explore_text {
+                        opacity: 0.2;
+                    }
+                    .explore_btn {
+                        background: transparent;
+                        border-color: #c9c9c9;
+                        pointer-events: none;
+
+                        [data-text-wrapper] {
+                            span {
+                                color: #c9c9c9;
+                            }
+                        }
+
+                        > [data-icon] {
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    .explore_title,
+                    .explore_text {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .explore_taiko_alethia {
+            .explore_taiko_text {
+                opacity: 0.4;
+            }
+            border-color: getColorBlack(0.2);
+
+            &::after {
+                background: #dadada;
+            }
+        }
+    }
+
+    &:not(._right) {
+        @include screen-md {
+            .explore_item {
+                &:nth-child(2) {
+                    .explore_btn {
+                        background: transparent;
+                        border-color: #c9c9c9;
+                        pointer-events: none;
+
+                        [data-text-wrapper] {
+                            span {
+                                color: #c9c9c9;
+                            }
+                        }
+
+                        > [data-icon] {
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .explore_left {
+            background-color: rgba(#a3a3a3, 0.1);
+        }
+        .explore_right {
+            .explore_taiko_image img {
+                opacity: 0;
+            }
+            &::before {
+                opacity: 0;
+            }
+        }
+        .explore_taiko_gwyneth {
+            .explore_taiko_text {
+                opacity: 0.4;
+            }
+            border-color: getColorBlack(0.2);
+
+            &::after {
+                background: #dadada;
+            }
+        }
+    }
+}
+.explore_wrapper {
+    display: flex;
+    position: relative;
+    height: 100vh;
+}
+.explore_left,
+.explore_right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: background 1000ms ease;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 343px;
+        aspect-ratio: 1 / 1.344;
+        background-image: url("/img/home-new/taiko-grid.svg");
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 1000ms ease;
+        z-index: -1;
+        mask: radial-gradient(circle at 10%, black, transparent);
+    }
+}
+.explore_left {
+    left: 0;
+
+    .explore_taiko_image {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transform: translate(50%, -40%);
+    }
+
+    &::before {
+        right: 0;
+        transform: translateY(-50%) scaleX(-1);
+    }
+}
+.explore_right {
+    right: 0;
+
+    .explore_taiko_image {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        transform: translate(-50%, -40%);
+    }
+
+    &::before {
+        left: 0;
+    }
+}
+
+.explore_taiko_image_wrapper {
+    width: 100%;
+
+    animation: taikoRound 10s infinite linear;
+}
+
+.explore_taiko_image {
+    width: 325px;
+    position: relative;
+    z-index: 2;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 99%;
+        transition: opacity 1000ms ease;
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right: 0;
+        opacity: 0;
+        background-position: right top;
+    }
+}
+
+.explore_taiko_alethia,
+.explore_taiko_gwyneth {
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e81899;
+    transition: border 1000ms ease;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        position: absolute;
+        bottom: 0%;
+    }
+}
+.explore_taiko_alethia {
+    right: 106px;
+    top: 44%;
+    width: 232px;
+
+    &::after {
+        right: 0;
+        transform: translate(50%, 50%);
+    }
+}
+.explore_taiko_gwyneth {
+    top: 48%;
+    left: 132px;
+    width: 196px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    &::after {
+        left: 0;
+        transform: translate(-50%, 50%);
+        transition: background 1000ms ease;
+    }
+}
+.explore_taiko_text {
+    @include setFontPublicSans600(12px, 1.255, 0.04em, getColorBlack());
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    transition: opacity 1000ms ease;
+
+    span {
+        color: getColorPink();
+    }
+}
+
+.explore_taiko_svg {
+    width: 100%;
+}
+
+.explore_container {
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+    padding-bottom: 56px;
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.explore_item {
+    max-width: 400px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:nth-child(2) {
+        text-align: right;
+        align-items: flex-end;
+
+        @include screen-md {
+            .explore_title {
+                opacity: 0.1;
+            }
+            .explore_text {
+                opacity: 0.2;
+            }
+        }
+    }
+}
+
+.explore_title {
+    @include setFontClashGrotest500(85px, 0.8, -0.02em, getColorBlack());
+    transition: opacity 1000ms ease;
+
+    max-width: 4.4em;
+}
+
+.explore_text {
+    margin-top: 18px;
+    @include setFontPublicSans400(14px, 1.255, -0.01em, getColorBlack());
+    transition: opacity 1000ms ease;
+}
+
+.explore_btn {
+    margin-top: 28px;
+    border: 1.5px solid transparent;
+    transition: 1000ms ease;
+    transition-property: border, background;
+    height: 50px;
+
+    [data-text-wrapper] {
+        span {
+            transition: color 1000ms ease;
+        }
+    }
+
+    > [data-icon] {
+        transition: 500ms ease;
+        transition-property: width, height;
+    }
+}
+
+@keyframes taikoRound {
+    0% {
+        transform: rotate(0deg) translateX(30px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(30px) rotate(-360deg);
+    }
+}
+
+@include -screen-xl {
+    .explore_container {
+        padding: 36px;
+    }
+    .explore_taiko_image {
+        width: 280px;
+    }
+    .explore_left,
+    .explore_right {
+        &::before {
+            width: 320px;
+        }
+    }
+    .explore_title {
+        font-size: 68px;
+    }
+}
+
+@include -screen-md {
+    .explore {
+        &._right {
+            .explore_item {
+                &:nth-child(1) {
+                    opacity: 0;
+                }
+                &:nth-child(2) {
+                    opacity: 1;
+                }
+            }
+        }
+        &:not(._right) {
+            .explore_item {
+                &:nth-child(1) {
+                    opacity: 1;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .explore_taiko_image {
+        width: 220px;
+        top: 35% !important;
+    }
+    
+    .explore_left,
+    .explore_right {
+        &::before {
+            width: 245px;
+            top: 40%;
+        }
+    }
+    .explore_taiko_alethia {
+        width: 130px;
+        right: 50px;
+        top: 34%;
+    }
+    .explore_taiko_gwyneth {
+        width: 160px;
+        left: 86px;
+        top: 38%;
+    }
+    .explore_item {
+        align-items: center !important;
+        text-align: center !important;
+        position: absolute;
+        left: 50%;
+        bottom: 46px;
+        transform: translateX(-50%);
+        transition: opacity 1000ms ease;
+    }
+    .explore_taiko_text {
+        font-size: 10px;
+    }
+    .explore_title {
+        font-size: 60px;
+    }
+    .explore_text {
+        margin-top: 16px;
+        font-size: 16px;
+        max-width: 244px;
+    }
+    .explore_btn {
+        margin-top: 24px;
+    }
+}
+
+@include -screen-sm {
+    .explore_taiko_gwyneth {
+        width: 113px;
+        padding-bottom: 6px;
+        left: 50px;
+    }
+    .explore_taiko_alethia {
+        width: 134px;
+        padding-bottom: 6px;
+        right: 30px;
+    }
+    .explore_taiko_text {
+        font-size: 8px;
+    }
+    .explore_left,
+    .explore_right {
+        &::before {
+            width: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .explore_taiko_image {
+        width: 190px;
+    }
+}

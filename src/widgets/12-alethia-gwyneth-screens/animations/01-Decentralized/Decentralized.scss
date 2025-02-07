@@ -1,0 +1,26 @@
+.adec {
+    max-width: 244px;
+}
+.adec-block {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.features-item {
+    @include -screen-lg {
+        .adec-block {
+            animation: adecOpacity 3s linear infinite;
+        }
+
+    }
+    @include screen-lg {
+        &:hover .adec-block {
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes adecOpacity {
+    0%, 10%, 90%, 100% { opacity: 0; }
+    40%, 60% { opacity: 1; }
+}

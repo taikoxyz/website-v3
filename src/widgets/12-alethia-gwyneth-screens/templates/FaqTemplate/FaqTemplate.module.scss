@@ -1,0 +1,135 @@
+.faq {
+    padding: 30px 0 45px;
+}
+.faq_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.faq_left {
+    width: 450px;
+    flex-shrink: 0;
+}
+.faq_title {
+    @include setFontClashGrotest500(60px, 0.95, -0.02em, #22282b);
+}
+.faq_text {
+    max-width: 340px;
+    margin-top: 32px;
+    @include setFontPublicSans400(18px, 1.2, -0.02em, getColorBlack(0.6));
+}
+
+.faq_questions {
+    width: calc(100% - 490px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 820px;
+}
+.question {
+    background: #fff;
+    border-radius: 16px;
+}
+.question_button {
+    width: 100%;
+    padding: 24px;
+    @include setFontClashGrotest500(20px, 0.95, normal, getColorBlack());
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    span {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        position: relative;
+        transition: transform 200ms ease;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #0d091f;
+            border-radius: 2px;
+        }
+
+        &::before {
+            width: 2px;
+            height: 100%;
+        }
+
+        &::after {
+            height: 2px;
+            width: 100%;
+        }
+    }
+
+    &._active span {
+        transform: rotate(45deg);
+    }
+}
+.question_content {
+    padding: 0 24px 24px;
+    @include setFontPublicSans400(18px, 1.2, -0.02em, getColorBlack(0.6));
+
+    p + p {
+        margin-top: 1em;
+    }
+}
+
+@include -screen-xxl {
+    .faq_title {
+        font-size: 52px;
+        max-width: 380px;
+    }
+}
+
+@include -screen-lg {
+    .faq_wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 36px;
+    }
+    .faq_text {
+        margin-top: 24px;
+    }
+    .faq_left {
+        width: 100%;
+    }
+    .faq_questions {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@include -screen-md {
+    .faq_title {
+        font-size: 46px;
+        max-width: 7.2em;
+    }
+}
+
+@include -screen-sm {
+    .faq_title {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 359.98px) {
+    .faq_title {
+        font-size: 36px;
+    }
+    .question_button  {
+        padding: 20px;
+    }
+    .question_content {
+        padding: 0 20px 20px;
+    }
+}

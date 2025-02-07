@@ -1,0 +1,228 @@
+@function getHeroBorder() {
+    @return 1px solid rgba(#000, 0.12);
+}
+
+.hero {
+    padding: 96px 18px 48px;
+}
+.hero_wrapper {
+    padding: 0 100px;
+    max-width: 1476px;
+    width: 100%;
+    margin: 0 auto;
+    background: url("/img/alethia/hero-bg.webp");
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_container {
+    padding: 56px 0 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include screen-md {
+        border-left: getHeroBorder();
+        border-right: getHeroBorder();
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: calc(100% - 46px);
+            top: 0;
+            position: absolute;
+        }
+        &::before {
+            left: 100px;
+            border-left: getHeroBorder();
+        }
+        &::after {
+            right: 100px;
+            border-right: getHeroBorder();
+        }
+    }
+}
+
+.hero_logo {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include screen-md {
+        border-top: getHeroBorder();
+        &::after {
+            content: "";
+            display: block;
+            width: calc(100vw);
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            border-bottom: getHeroBorder();
+        }
+    }
+}
+.hero_logo_image {
+    height: 25px;
+}
+.hero_content {
+    width: 100%;
+    padding: 80px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+
+    @include screen-md {
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: url("/img/alethia/hero-lines.svg");
+            background-size: 100px auto;
+        }
+
+        &::before {
+            right: 100%;
+        }
+        &:after {
+            left: 100%;
+        }
+    }
+}
+.hero_title {
+    max-width: 10.25em;
+    @include setFontClashGrotest500(80px, 1, -0.02em, #191e28);
+}
+.hero_text {
+    margin-top: 32px;
+    max-width: 530px;
+    @include setFontPublicSans400(18px, 1.255, -0.01em, getColorBlack());
+}
+.hero_icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 34px 0;
+    position: relative;
+
+    @include screen-md {
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: calc(100vw);
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            border-top: getHeroBorder();
+            top: 0;
+        }
+
+        &::after {
+            border-bottom: getHeroBorder();
+            bottom: 0;
+        }
+    }
+}
+.hero_icon_image {
+    width: 32px;
+}
+
+@include -screen-xxl {
+    .hero_title {
+        font-size: 68px;
+    }
+    .hero_text {
+        margin-top: 24px;
+    }
+}
+
+@include screen-lg {
+    @media screen and (max-height: 800px) {
+        .hero_title {
+            font-size: 65px;
+        }
+        .hero_content {
+            padding: 50px 0;
+        }
+    }
+}
+
+@include -screen-md {
+    .hero_wrapper {
+        padding: 52px 0;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 52.4%;
+            height: 52px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            border-left: getHeroBorder();
+            border-right: getHeroBorder();
+            border-left-width: 0.5px;
+            border-right-width: 0.5px;
+            background: url("/img/alethia/hero-lines@mob.svg");
+            background-size: auto 100;
+        }
+
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+    }
+    .hero_container {
+        padding: 30px 0;
+    }
+    .hero_title {
+        font-size: 55px;
+    }
+    .hero_text {
+        font-size: 16px;
+    }
+    .hero_content {
+        padding: 54px 0;
+    }
+    .hero_container,
+    .hero_icon,
+    .hero_logo {
+        border-top: getHeroBorder();
+        border-bottom: getHeroBorder();
+    }
+    .hero_icon {
+        padding: 15px;
+    }
+}
+
+@include -screen-sm {
+    .hero_title {
+        font-size: 44px;
+    }
+}

@@ -1,0 +1,16 @@
+.button {
+    cursor: pointer;
+}
+
+.accordion_disabled {
+    .button {
+        cursor: default;
+    }
+}
+
+.accordion_smooth {
+    .content {
+        overflow: hidden;
+        transition: height 200ms ease-in;
+    }
+}

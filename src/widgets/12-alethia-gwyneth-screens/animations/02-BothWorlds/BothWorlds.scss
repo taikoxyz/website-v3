@@ -1,0 +1,59 @@
+.bothWorlds {
+    max-width: 278px;
+}
+
+.bothWorlds_up {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: 600ms ease;
+    transition-property: opacity, transform;
+    position: relative;
+    z-index: 2;
+}
+.bothWorlds_down {
+    transform: translateY(-50%);
+    transition: transform 600ms ease;
+}
+
+.features-item {
+    @include screen-lg {
+        &:hover {
+            .bothWorlds_up,
+            .bothWorlds_down {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    @include -screen-lg {
+        .bothWorlds_up {
+            animation: bothWorldsUp 5s ease infinite;
+        }
+        .bothWorlds_down {
+            animation: bothWorldsDown 5s ease infinite;
+        }
+    }
+}
+
+@keyframes bothWorldsUp {
+    0%, 10%, 80%, 100% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    40%, 60% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes bothWorldsDown {
+    0%, 10%, 80%, 100% {
+        transform: translateY(-50%);
+    }
+
+    40%, 60% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,38 @@
+.forever{
+    max-width: 272px;
+}
+.forever-arrow {
+    opacity: 0;
+    transition: opacity .75s ease;
+}
+
+@include screen-lg {
+    .features-item:hover {
+        .forever-arrow {
+            opacity: 1;
+
+            &:nth-child(2) { transition-delay: 0.1s; }
+            &:nth-child(3) { transition-delay: 0.2s; }
+            &:nth-child(4) { transition-delay: 0.3s; }
+        }
+    }
+}
+
+@include -screen-lg {
+    .features-item .forever-arrow {
+        animation: foreverArrow 1.5s ease infinite;
+
+        &:nth-child(2) { animation-delay: 0.1s }
+        &:nth-child(3) { animation-delay: 0.2s }
+        &:nth-child(4) { animation-delay: 0.3s }
+    }
+}
+
+@keyframes foreverArrow {
+    0%, 100% {
+        opacity: 0;
+    }
+    40%, 60% { 
+        opacity: 1;
+    }
+}

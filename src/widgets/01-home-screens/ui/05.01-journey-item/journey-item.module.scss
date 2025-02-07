@@ -1,0 +1,92 @@
+.item {
+    font-size: 16px;
+
+    &._blue {
+        .item_list {
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom, transparent, #6438d6);
+            border-image-slice: 1;
+            background: linear-gradient(to bottom, transparent, rgba(#6438d6, 0.1) 120%);
+        }
+    }
+
+    &._pink {
+        .item_list {
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom, transparent, #e81899);
+            border-image-slice: 1;
+            background: linear-gradient(to bottom, transparent, rgba(#e81899, 0.1) 120%);
+        }
+    }
+
+    &._orange {
+        .item_list {
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom, transparent, #ffc037);
+            border-image-slice: 1;
+            background: linear-gradient(to bottom, transparent, rgba(#ffc037, 0.1) 120%);
+        }
+    }
+}
+
+.item_title {
+    @include setFontClashGrotest500(1.375em, 0.9, -0.02em, #fff);
+    position: relative;
+    z-index: 2;
+    padding-left: .54em;
+}
+.item_content {
+    // margin-top: -11px;
+    transform: translateY(-0.6875em);
+    backdrop-filter: blur(0.9375em);
+    overflow: hidden;
+    height: 0;
+    transition: height 800ms ease;
+}
+.item_list {
+    padding: 0.875em 1.125em;
+    padding-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 6;
+    position: relative;
+}
+.item_list_point {
+    @include setFontPublicSans400(0.875em, 1.6, -0.01em, rgba(#fff, 0.6));
+
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    strong {
+        font: inherit;
+        color: #fff;
+    }
+
+    &::before {
+        align-self: flex-start;
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        margin-top: 0.44em;
+        background: url("/img/icons/plus.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        flex-shrink: 0;
+    }
+}
+
+@include -screen-lg {
+    .item {
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 359.98px) {
+    .item {
+        font-size: 10px;
+    }   
+}

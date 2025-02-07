@@ -1,0 +1,150 @@
+.hero {
+    height: 100vh;
+    background: #f8f8f8;
+
+    overflow: hidden;
+    background-image: url("/img/home-new/hero-bg.webp");
+    background-size: cover;
+    background-position: right bottom;
+}
+
+.hero_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 140px;
+}
+
+.hero_title {
+    max-width: 10em;
+    @include setFontClashGrotest500(85px, 0.8, -0.02em, getColorBlack());
+    text-align: center;
+}
+
+.hero_controls {
+    margin-top: 32px;
+    display: flex;
+    gap: 15px;
+}
+
+.hero_taiko {
+    margin-top: 59px;
+    width: 642px;
+    aspect-ratio: 1 / 0.554;
+
+    background: url("/img/home-new/taiko-holder.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-49.8%, -50%);
+        width: 242.52%;
+        aspect-ratio: 1 / 0.29351;
+        background: url("/img/home-new/bg-grid.webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        mask: radial-gradient(black, black, transparent);
+    }
+}
+
+.hero_taiko_inner {
+    height: 100%;
+    aspect-ratio: 1.17 / 1;
+
+    position: relative;
+
+    background: linear-gradient(to right, transparent 0%, rgba(#E81899, 0.25) 100%);
+    background-size: 50% 100%;
+    background-position: -100% 0;
+    background-repeat: no-repeat;
+    animation: bgAnimation 6s infinite ease-out
+}
+
+.hero_taiko_img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -45%);
+
+    aspect-ratio: 1;
+    width: 74%;
+}
+
+@include screen-lg {
+    @media screen and (max-height: 820px) {
+        .hero_wrapper {
+            padding-top: 120px;
+        }
+        .hero_title {
+            font-size: 68px;
+        }
+        .hero_taiko {
+            width: 500px;
+        }
+    }
+}
+
+@include -screen-lg {
+    .hero_wrapper {
+        padding-top: 0;
+        justify-content: center;
+        height: 100vh;
+    }
+    .hero_title {
+        font-size: 68px;
+    }
+    .hero_taiko {
+        width: 500px;
+    }
+}
+
+@include -screen-md {
+    .hero_title {
+        font-size: 55px;
+    }
+    .hero_taiko {
+        width: 480px;
+    }
+}
+
+@media screen and (max-width: 389.98px) {
+    .hero_title {
+        font-size: 44px;
+    }
+    .hero_controls {
+        margin-top: 24px;
+        gap: 10px;
+
+        button, a {
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+    .hero_taiko {
+        margin-top: 32px;
+        width: 400px;
+    }
+}
+
+@keyframes bgAnimation {
+    0% {
+        background-position: -100% 0;
+    }
+    30%, 100% {
+        background-position: 200% 0;
+    }
+}
