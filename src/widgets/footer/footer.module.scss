@@ -1,7 +1,10 @@
 .footer {
-    padding: 24px 0 30px;
+    padding-bottom: 12px;
 }
 .footer_wrapper {
+    background: #FFF;
+    padding: 24px 24px 30px;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -43,7 +46,6 @@
     width: calc(100% - 242px);
     padding: 40px 45px;
     border-radius: 20px;
-    // background: #f8f8f8;
 
     align-self: flex-start;
 }
@@ -128,6 +130,7 @@
     }
     .footer_nav {
         width: 100%;
+        padding: 30px 0;
     }
     .footer_copyright {
         position: relative;
@@ -135,12 +138,6 @@
     }
     .footer_content {
         text-align: center;
-    }
-}
-
-@include -screen-lg {
-    .footer_nav {
-        padding: 30px 28px;
     }
 }
 

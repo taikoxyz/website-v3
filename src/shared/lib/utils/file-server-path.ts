@@ -1,7 +1,7 @@
 import { IFileObject } from '../types';
 
 export const fileServerPath = (name: string) => {
-    return name;
+    return process.env.NEXT_PUBLIC_API_URL + name;
 };
 
 export const getFileData = (file: IFileObject) => {

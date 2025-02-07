@@ -39,7 +39,7 @@ export const Logo: React.FC = () => {
                                     className={css.button}
                                     text={t('logo.button')}
                                     variant="pink-outlined"
-                                    href={activeLogo.img}
+                                    href="/img/brand/taiko.zip"
                                     component="a"
                                     download
                                 />

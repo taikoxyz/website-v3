@@ -8,7 +8,7 @@ import Rays from "widgets/01-home-screens/components/Rays";
 import TaikoIcon from "widgets/01-home-screens/components/Taiko";
 import { HOME_PAG, useHomeData } from "widgets/01-home-screens/lib";
 import { SequentialDots } from "shared/animations";
-import { Button, WrapperButton } from "shared/components/@buttons/button";
+import { WrapperButton } from "shared/components/@buttons/button";
 import Image from "shared/ui/image";
 import css from "./scaling.module.scss";
 
