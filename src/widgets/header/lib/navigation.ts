@@ -30,7 +30,7 @@ export const headerNavigation: INavItem[] = [
                 },
                 {
                     name: "Apps",
-                    href: "",
+                    href: "https://taiko.xyz/ecosystem",
                     icon: "/img/header/apps.svg",
                 },
                 {
@@ -50,7 +50,7 @@ export const headerNavigation: INavItem[] = [
                             href: "https://taikoscan.io/",
                         },
                         {
-                            name: "Taikoscan.network",
+                            name: "Taikoexplorer.com/",
                             desc: "By Routescan",
                             href: "https://taikoscan.network/",
                         },
@@ -100,18 +100,13 @@ export const headerNavigation: INavItem[] = [
             [
                 {
                     name: "Learn",
-                    href: "",
+                    href: "https://taiko.mirror.xyz/9lW3JdFnMJGtoPbmXqFS32XNxf_iK0VDx0vGWk2K7Eo",
                     icon: "/img/header/learn.svg",
                 },
                 {
                     name: "Aragon",
                     href: "https://hekla.dao.taiko.xyz/",
                     icon: "/img/header/aragon.svg",
-                },
-                {
-                    name: "Docs",
-                    href: "https://docs.taiko.xyz/start-here/getting-started",
-                    icon: "/img/header/docs.svg",
                 },
             ],
         ],
