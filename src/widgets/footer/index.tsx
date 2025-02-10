@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
                             &copy; {new Date().getFullYear()} Taiko Labs
                         </p>
                         <div className={css.footer_content}>
-                            <p className={css.footer_content_title}>Taiko labs</p>
+                            <p className={css.footer_content_title}>Taiko Labs</p>
                             <p className={css.footer_content_text}>
                                 The most developer-friendly and secure Ethereum scaling solution.
                             </p>
