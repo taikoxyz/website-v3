@@ -1,20 +1,5 @@
 .socials {
     @include setGrid(5, 24, 24, a);
-
-    // @for $i from 1 through 8 {
-    //     .socials_link:nth-child(#{$i}) {
-    //         .socials_wrapper {
-    //             transition-delay: #{$i * 0.1 - 0.1}s;
-    //         }
-    //     }
-    // }
-
-    // &Active {
-    //     .socials_wrapper {
-    //         opacity: 1;
-    //         transform: scale(1);
-    //     }
-    // }
 }
 
 .socials_link {
@@ -22,24 +7,31 @@
     border-radius: 17px;
     background: $kColorThemeWhite;
     border: 2px solid transparent;
-
     transition: border 0.2s ease;
-
     font-size: 0;
 
-    svg,
-    img {
+    svg {
         width: 34px;
         height: 34px;
         flex-shrink: 0;
         fill: rgba(#ACACAC, 0.5);
-
         transition: fill .2s ease;
     }
 
-    img {
-        transition: opacity .2s ease;
-        opacity: 0.3;
+    .mirror_logo {
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: opacity .2s ease;
+            opacity: 0.3;
+        }
     }
 
     span {
@@ -52,27 +44,21 @@
         border-color: $kColorPink;
 
         &:nth-child(1) svg {
-            fill: #5765F1;  
+            fill: #5765F1;
         }
-
         &:nth-child(2) svg {
             fill: black;
         }
-
-        &:nth-child(3) svg {
-            fill: #A92323;
+        &:nth-child(3) {
+            .mirror_logo img {
+                opacity: 1;
+            }
         }
-
         &:nth-child(4) svg {
             fill: $kColorPink;
         }
-
         &:nth-child(5) svg {
             fill: #FF0000;
-        }
-
-        img {
-            opacity: 1;
         }
     }
 }
@@ -82,21 +68,13 @@
     align-items: center;
     justify-content: center;
     gap: 18px;
-    // opacity: 0;
-    // transform: scale(0);
-
-    // transition: .6s cubic-bezier(.23,1.02,.85,1.33);
-    // transition-property: opacity, transform;
 }
 
 @media screen and (max-width: $kLaptopSM) {
-    .socials {
-    }
-
     .socials_link {
         gap: 8px;
 
-        img, svg {
+        svg, .mirror_logo {
             width: 26px;
             height: 26px;
         }
@@ -118,7 +96,6 @@
         span {
             display: none;
         }
-
         svg {
             fill: #ACACAC;
         }
@@ -129,7 +106,6 @@
     .socials {
         @include setGrid(5, 9, 9, a);
     }
-
     .socials_link {
         padding: 17px;
         border-radius: 12px;

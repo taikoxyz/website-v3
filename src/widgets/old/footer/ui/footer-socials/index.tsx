@@ -9,11 +9,9 @@ export const FooterSocials: React.FC = () => {
     const socials = useTranslationObject<IFooterSocial[]>('socials', 'footer');
 
     return (
-        <div 
-            className={css.socials}
-        >
+        <div className={css.socials}>
             {socials.map((social) => (
-                <a 
+                <a
                     className={css.socials_link}
                     href={social.url}
                     key={social.url}
@@ -21,9 +19,13 @@ export const FooterSocials: React.FC = () => {
                 >
                     {social.name}
                     <div className={css.socials_wrapper}>
-                        {social.name === "mirror" 
-                            ? <Image.Default src="/img/mirror-logo.png" alt="" />
-                            : <Sprite.Default icon={social.icon} />}
+                        {social.name === "mirror" ? (
+                            <div className={css.mirror_logo}>
+                                <Image.Default src="/img/mirror-logo.png" alt="" />
+                            </div>
+                        ) : (
+                            <Sprite.Default icon={social.icon} />
+                        )}
                         <span>{social.name}</span>
                     </div>
                 </a>
