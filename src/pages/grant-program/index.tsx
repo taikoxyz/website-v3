@@ -15,15 +15,13 @@ const GrantProgram: NextPage = () => {
     return (
         <MainLayout
             title="Grant Program – Taiko"
-            description={t("hero.title")}
+            description="Taiko Grant Cycle 3: $25M to Support Community Builders and Partners"
             className={css.root}
         >
             <DefaultLayout>
                 <div className={css.gap}>
                     <GrantScreens.Hero />
-                    <GrantScreens.KeyDates />
                     <GrantScreens.Mission />
-                    {/* <GrantScreens.Community /> */}
                     <GrantScreens.Tracks />
                     <GrantScreens.Support />
                 </div>
