@@ -1,107 +1,85 @@
-import clsx from 'clsx';
-import { useTranslation } from 'next-i18next';
 import React from 'react';
-import { Button } from 'shared/components/@buttons/button';
-import { useTranslationObject } from 'shared/lib/hooks/use-translation-object';
-import { MediaQuery } from 'shared/ui/media-query';
-import { IGrantTrack } from 'widgets/11-grant-screens/lib/types';
+import { useTranslation } from 'next-i18next';
 import css from './tracks.module.scss';
-import Image from 'shared/ui/image';
 
 export const Tracks: React.FC = () => {
-    const tracks = useTranslationObject<IGrantTrack[]>('track.items', 'grant-program');
     const { t } = useTranslation('grant-program');
-    
-    
+
+    // Define tracks directly in the component
+    const tracks = [
+        {
+            title: "DeFi",
+            subtitle: "Decentralized Finance",
+            description: "Projects focused on lending, borrowing, trading, and other financial applications built on Taiko."
+        },
+        {
+            title: "AI",
+            subtitle: "Artificial Intelligence",
+            description: "Applications combining blockchain technology and artificial intelligence to create innovative solutions on Taiko."
+        },
+        {
+            title: "RWA",
+            subtitle: "Real World Assets",
+            description: "Projects focused on tokenizing and managing real-world assets on the Taiko blockchain."
+        },
+        {
+            title: "SocialFi",
+            subtitle: "Social Finance",
+            description: "Projects combining social networks with financial features built on Taiko."
+        },
+        {
+            title: "Gaming",
+            subtitle: "Gaming and NFTs",
+            description: "Gaming applications, NFT projects, and metaverse experiences built on Taiko."
+        },
+        {
+            title: "Other",
+            subtitle: "And Beyond",
+            description: "Other innovative projects that leverage Taiko's strengths such as Ethereum-equivalence, based design, and permissionless proposing/proving."
+        }
+    ];
+
     return (
         <section className={css.tracks}>
             <div className="container">
                 <h2 className={css.title}>
-                    {t('track.title')}
+                    Grant Tracks
                 </h2>
-                
-                <ul className={css.list}>
-                    {tracks.map((item) => (
-                        <li 
-                            className={clsx(css.list_item, !item.active && css.list_itemDeactivated)} 
-                            key={item.title}
-                        >
-                            <div className={css.content}>
-                                <div className={css.content_header}>
-                                    <Image.Default
-                                        className={css.content_icon}
-                                        src={item.icon} 
-                                        alt="" 
-                                    />
 
-                                    <div className={css.content_column}>
-                                        <h3 className={css.content_title}>
-                                            {item.title}
-                                        </h3>
-
-                                        <p className={css.content_track}>
-                                            {item.track}
-                                        </p>
-                                    </div>
-
-                                    {item.active && <MediaQuery 
-                                        query="(min-width: 769px)"
-                                        children={
-                                            <Button 
-                                                component="a"
-                                                href={item.link}
-                                                target="_blank"
-                                                className={css.content_button}
-                                                text={t('track.applyNow')}
-                                                variant="pink-outlined"
-                                            />
-                                        }
-                                    />}
+                <div className={css.grid}>
+                    {tracks.map((track, index) => (
+                        <div key={index} className={css.card}>
+                            <div className={css.card_content}>
+                                <div className={css.card_header}>
+                                    <h3 className={css.card_title}>{track.title}</h3>
+                                    <p className={css.card_subtitle}>{track.subtitle}</p>
                                 </div>
 
-                                <p 
-                                    className={css.content_text} 
-                                    dangerouslySetInnerHTML={{
-                                        __html: item.text
-                                    }}
-                                />
+                                <p className={css.card_description}>{track.description}</p>
                             </div>
 
-                            <div className={css.footer}>
-                                <MediaQuery 
-                                    query="(min-width: 657px)"
-                                    children={
-                                        <h4 className={css.footer_title}>
-                                            Timeline
-                                        </h4>
-                                    }   
-                                />
-                                
-                                <p 
-                                    className={css.footer_text}
-                                    dangerouslySetInnerHTML={{
-                                        __html: item.timeline
-                                    }}
-                                />
+                            <div className={css.card_footer}>
+                                <p className={css.timeline}>Applications open on an ongoing basis</p>
                             </div>
-
-                            <MediaQuery 
-                                query="(max-width: 768px)"
-                                children={
-                                    <Button 
-                                        component="a"
-                                        href={item.link}
-                                        data-class="blog"
-                                        target="_blank"
-                                        className={css.content_button}
-                                        text={t('track.applyNow')}
-                                        variant="pink-outlined"
-                                    />
-                                }
-                            />
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
+
+                <div className={css.apply_container}>
+                    <a
+                        href="https://airtable.com/appiHMc0glvIWmuan/shrvmPOFrTleLFQJd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={css.apply_button}
+                    >
+                        Apply Now
+                        <div className={css.arrow_circle}>
+                            <svg className={css.arrow} viewBox="0 0 24 24">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     );
