@@ -1,0 +1,55 @@
+.disclaimer_banner {
+    padding: 34px 36px;
+    border-radius: 32px;
+    border: 3px solid getColorPink();
+
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.disclaimer_icon {
+    width: 56px;
+    height: 56px;
+}
+
+.disclaimer_column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.disclaimer_title {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+    text-transform: uppercase;
+}
+
+.disclaimer_text {
+    @include setFontPublicSans400(18px, 1.2, 0.04em, getColorBlack(0.6));
+}
+
+@include -screen-md {
+    .disclaimer_banner {
+        position: relative;
+    }
+    .disclaimer_icon {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+    .disclaimer_banner {
+        padding-top: 50px;
+        text-align: center;
+    }
+    .disclaimer_text {
+        font-size: 16px;
+    }
+}
+
+@include -screen-sm {
+    .disclaimer_banner {
+        border-radius: 24px;
+        padding: 50px 24px 24px;
+    }
+}

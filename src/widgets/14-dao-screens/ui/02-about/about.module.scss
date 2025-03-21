@@ -1,0 +1,176 @@
+.about {
+    padding: 100px 0 70px;
+}
+.about_suptitle {
+    text-transform: uppercase;
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+}
+.about_head {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+}
+.about_head_title {
+    @include setFontClashGrotest500(85px, 0.9, -0.02em, #000);
+}
+.about_head_text {
+    max-width: 468px;
+    @include setFontPublicSans400(18px, 1.255, -0.01em, #0b101b);
+}
+
+.about_wrapper {
+    margin-top: 40px;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.about_item {
+    padding: 28px 28px 36px;
+    border-radius: 10px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &._info {
+        padding: 28px;
+        background: url("/img/dao/feature-bg.webp");
+        justify-content: flex-start;
+        min-height: 420px;
+
+        .about_item_title {
+            margin-top: 24px;
+            max-width: 100%;
+            color: #fff;
+            margin-bottom: 24px;
+            max-width: 9.2em;
+
+            @media screen and (min-width: 1720px) {
+                font-size: 48px;
+            }
+        }
+    }
+}
+.about_item_join {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, #fff);
+    text-transform: uppercase;
+}
+.about_item_joinBtn {
+    margin-top: auto;
+
+    background: #ffffff;
+    span {
+        color: getColorPink();
+    }
+
+    [data-icon] {
+        background: getColorPink();
+        svg {
+            stroke: #fff;
+        }
+    }
+}
+.about_animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.about_item_top {
+    padding-bottom: 28px;
+}
+.about_item_index {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+}
+.about_item_title {
+    max-width: 300px;
+    margin-top: 24px;
+    @include setFontClashGrotest500(50px, 0.9, normal, #191e28);
+}
+.about_item_text {
+    padding-top: 28px;
+    @include setFontPublicSans400(18px, 1.255, -0.01em, getColorBlack());
+}
+.about_item_disabled {
+    margin-top: 16px;
+    height: 34px;
+    @include setFontClashGrotest500(16px, 1.255, -0.02em, #fff);
+    background: getColorPink();
+    padding: 2px 12px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1720px) {
+    .about_item_title {
+        font-size: 42px;
+    }
+}
+
+@include -screen-xxl {
+    .about_head_title {
+        font-size: 68px;
+    }
+    .about_head_text {
+        font-size: 16px;
+        max-width: 420px;
+    }
+    .features_item_title {
+        font-size: 36px;
+    }
+}
+
+@include -screen-lg {
+    .about_head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .about_head_title {
+        font-size: 55px;
+    }
+    .about_wrapper {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+}
+@include -screen-md {
+    .about_wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+@include -screen-sm {
+    .about_head_title {
+        font-size: 44px;
+    }
+    .about_item {
+        padding: 21px 21px 24px;
+        border-radius: 20px;
+    }
+    .about_item_title {
+        font-size: 36px;
+    }
+    .about_item_text {
+        font-size: 16px;
+    }
+    .about_animation {
+        svg {
+            max-width: 220px;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 359.98px) {
+    .about_head_title {
+        font-size: 36px;
+    }
+    .about_item_title {
+        font-size: 28px;
+    }
+}

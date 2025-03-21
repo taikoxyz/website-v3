@@ -1,0 +1,66 @@
+:global(.features-item) {
+    @include screen-lg {
+        .stroke_pink,
+        .stroke_yellow,
+        .stroke_blue {
+            stroke: #e4e4e4;
+            transition: stroke 600ms ease;
+        }
+
+        &:hover {
+            .stroke_yellow {
+                stroke: #ffe760;
+            }
+            .stroke_pink {
+                stroke: getColorPink();
+            }
+            .stroke_blue {
+                stroke: #6438d6;
+            }
+        }
+    }
+
+    @include -screen-lg {
+        .stroke_pink,
+        .stroke_yellow,
+        .stroke_blue {
+            stroke: #e4e4e4;
+        }
+        .stroke_pink {
+            animation: strokePink 4s ease infinite;
+
+            @keyframes strokePink {
+                0%, 10%, 90%, 100% { 
+                    stroke: #e4e4e4;
+                }
+                35%, 65% { 
+                    stroke: getColorPink();
+                }
+            }
+        }
+        .stroke_yellow {
+            animation: strokeYellow 4s ease infinite;
+
+            @keyframes strokeYellow {
+                0%, 10%, 90%, 100% { 
+                    stroke: #e4e4e4;
+                }
+                35%, 65% { 
+                    stroke: #ffe760;
+                }
+            }
+        }
+        .stroke_blue {
+            animation: strokeBlue 4s ease infinite;
+
+            @keyframes strokeBlue {
+                0%, 10%, 90%, 100% { 
+                    stroke: #e4e4e4;
+                }
+                35%, 65% { 
+                    stroke: #6438d6;
+                }
+            }
+        }
+    }
+}
