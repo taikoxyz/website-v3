@@ -1,15 +1,16 @@
-import clsx from 'clsx';
-import React from 'react';
-import { IProjectCategory } from 'shared/lib/types';
-import css from './project-item.module.scss';
+import React from "react";
+import clsx from "clsx";
+import css from "./project-item.module.scss";
 
 interface Props {
-    url: string;
     iconSrc: string;
     title: string;
     text: string;
     type: string;
-    categories: IProjectCategory[];
+    categories: { id: number; name: string }[];
+    url?: string;
+    disabled?: boolean;
+    className?: string
 }
 
 export const ProjectItem: React.FC<Props> = ({
@@ -19,48 +20,41 @@ export const ProjectItem: React.FC<Props> = ({
     text,
     type,
     title,
+    disabled,
+    className
 }) => {
     return (
-        <a 
-            href={url} 
-            className={css.project}
-            target="_blank"
-        >
-            <div className={css.head}>
-                <img 
-                    className={css.icon} 
-                    src={iconSrc} 
-                    alt="" 
-                />
+        <a href={url} className={clsx(css.project, className)} target="_blank">
+            <span className={css.head}>
+                <img className={css.icon} src={iconSrc} alt="" />
 
-                <p className={clsx(
-                    css.label,
-                    type === 'Testnet' && css.labelTestnet
-                )}>
+                <span
+                    className={clsx(css.label, type === "Testnet" && css.labelTestnet)}
+                    data-label=""
+                >
                     <span>{type}</span>
-                </p>
-            </div>
+                </span>
+            </span>
 
-            <p className={css.title}>
-                {title}
-            </p>
+            <span className={css.title}>{title}</span>
 
-            <p className={css.text}>
-                {text}
-            </p>
+            <span className={css.text}>{text}</span>
 
             {categories.length > 0 && (
-                <ul className={css.categories}>
+                <span className={css.categories}>
                     {categories.map((category) => (
-                        <li 
-                            className={css.categories_item}
-                            key={category.id}
-                        >
+                        <span className={css.categories_item} key={category.id}>
                             {category.name}
-                        </li>
+                        </span>
                     ))}
-                </ul>
+                </span>
+            )}
+
+            {disabled && (
+                <span className={css.project_disabled}>
+                    <span className={css.project_comingSoon}>Coming soon</span>
+                </span>
             )}
         </a>
     );
-}
+};
