@@ -126,7 +126,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -48%);
+    transform: translate(-50%, -48%) scaleX(-1);
     width: 402px;
     aspect-ratio: 1;
 
@@ -199,7 +199,7 @@
     align-items: center;
     gap: 12px;
 
-    background: getColorStrictWhite();
+    background: $kColorThemeWhite;
     border-radius: 0 30px 0 0;
 
     padding: 18px 21px;
@@ -208,6 +208,7 @@
     position: absolute;
     left: 28px;
     bottom: 22px;
+
 
     &::before,
     &::after {
@@ -229,6 +230,7 @@
     &::after {
         bottom: 100%;
         left: 0;
+        transform: translateX(-30%);
     }
 }
 
@@ -271,6 +273,7 @@
         height: 480px;
     }
     .hero_about {
+        background: transparent;
         margin-top: 8px;
         // display: none;
         padding: 0;
