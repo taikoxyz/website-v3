@@ -1,0 +1,89 @@
+// :global(.features-item) {
+//     @include screen-lg {
+//         .circle_first {
+//             transform: translate(-14.5%, 14.1%);
+//             transition: transform 700ms ease;
+//         }
+//         .circle_third {
+//             transform: translate(14.5%, -15%);
+//             transition: transform 700ms ease;
+//         }
+//         &:hover {
+//             .circle_first,
+//             .circle_third {
+//                 transform: translate(0, 0);
+//             }
+//         }
+//     }
+//     @include -screen-lg {
+//         .circle_first {
+//             animation: moveFirstCircle 4s linear infinite;
+
+//             @keyframes moveFirstCircle {
+//                 0%, 15%, 85%, 100% { 
+//                     transform: translate(0, 0);
+//                 }
+//                 35%, 65% { 
+//                     transform: translate(-14.5%, 14.1%); 
+//                 }
+//             }
+//         }
+//         .circle_third {
+//             animation: moveThirdCircle 4s linear infinite;
+
+//             @keyframes moveThirdCircle {
+//                 0%, 15%, 85%, 100% { 
+//                     transform: translate(0, 0);
+//                 }
+//                 35%, 65% { 
+//                     transform: translate(14.5%, -15%); 
+//                 }
+//             }
+//         }
+//     }
+// }
+
+:global(.features-item) {
+    @include screen-lg {
+        .circle_first {
+            transition: transform 1s ease;
+        }
+        .circle_third {
+            transition: transform 1s ease;
+        }
+        &:hover {
+            .circle_first {
+                transform: translate(-29%, 29.1%);
+            }
+            .circle_third {
+                transform: translate(29%, -29.1%);
+            }
+        }
+    }
+    @include -screen-lg {
+        .circle_first {
+            animation: moveFirstCircle 6s ease infinite;
+
+            @keyframes moveFirstCircle {
+                0%, 15%, 85%, 100% { 
+                    transform: translate(0, 0);
+                }
+                35%, 65% { 
+                    transform: translate(-29%, 29.1%);
+                }
+            }
+        }
+        .circle_third {
+            animation: moveThirdCircle 6s ease infinite;
+
+            @keyframes moveThirdCircle {
+                0%, 15%, 85%, 100% { 
+                    transform: translate(0, 0);
+                }
+                35%, 65% { 
+                    transform: translate(29%, -29.1%);
+                }
+            }
+        }
+    }
+}

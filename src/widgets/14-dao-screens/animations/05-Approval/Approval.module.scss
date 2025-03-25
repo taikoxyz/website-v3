@@ -1,0 +1,51 @@
+:global(.features-item) {
+    .plus,
+    .star {
+        opacity: 0;
+        transition: opacity 600ms ease;
+    }
+    @include screen-lg {
+        &:hover {
+            .plus,
+            .star {
+                opacity: 1;
+            }
+            .star {
+                transition-delay: 250ms;
+            }
+        }
+    }
+
+    @include -screen-lg {
+        .star {
+            animation: starFade 4s ease infinite;
+
+            @keyframes starFade {
+                0%,
+                30%,
+                90%,
+                100% {
+                    opacity: 0;
+                }
+                70% {
+                    opacity: 1;
+                }
+            }
+        }
+        .plus {
+            animation: plusFade 4s ease infinite;
+
+            @keyframes plusFade {
+                0%,
+                10%,
+                90%,
+                100% {
+                    opacity: 0;
+                }
+                70% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

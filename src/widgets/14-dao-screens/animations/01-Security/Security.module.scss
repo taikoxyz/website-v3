@@ -1,0 +1,96 @@
+:global(.features-item) {
+    .rounds path {
+        stroke: #e4e4e4;
+        transition: stroke 450ms ease;
+    }
+
+    @include screen-lg {
+        &:hover {
+            .round_6 {
+                stroke: #e81899;
+            }
+            .round_5 {
+                stroke: #6438d6;
+                transition-delay: 75ms;
+            }
+            .round_4 {
+                stroke: #ffe760;
+                transition-delay: 150ms;
+            }
+            .round_3 {
+                stroke: #000;
+                transition-delay: 225ms;
+            }
+            .round_2 {
+                stroke: #e81899;
+                transition-delay: 300ms;
+            }
+            .round_1 {
+                stroke: #6438d6;
+                transition-delay: 375ms;
+            }
+        }
+    }
+    @include -screen-lg {
+        .round_6 { animation: round6 4s linear infinite; }
+        .round_5 { animation: round5 4s linear infinite 0.25s; }
+        .round_4 { animation: round4 4s linear infinite 0.5s; }
+        .round_3 { animation: round3 4s linear infinite 0.75s; }
+        .round_2 { animation: round2 4s linear infinite 1s; }
+        .round_1 { animation: round1 4s linear infinite 1.25s; }
+
+        @keyframes round6 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #e81899;
+            }
+        }
+
+        @keyframes round5 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #6438d6;
+            }
+        }
+
+        @keyframes round4 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #ffe760;
+            }
+        }
+
+        @keyframes round3 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #000;
+            }
+        }
+
+        @keyframes round2 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #e81899;
+            }
+        }
+
+        @keyframes round1 {
+            0%, 10%, 100% {
+                stroke: #e4e4e4;
+            }
+            70% {
+                stroke: #6438d6;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.welcome {
+    padding-top: 96px;
+}
+.welcome_wrapper {
+    border-radius: 40px;
+    background: #fff;
+    background-image: radial-gradient(
+        circle at 2px 2px,
+        getColorBlack(0.1) 0px,
+        getColorBlack(0.1) 2px,
+        #fff 2px,
+        #fff
+    );
+    background-size: 48px 48px;
+    padding: 70px 36px 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.welcome_label {
+    @include setFontPublicSans600(14px, 1.2, 0.04em, getColorPink());
+    text-transform: uppercase;
+    text-align: center;
+}
+.welcome_title {
+    margin-top: 44px;
+    text-align: center;
+    max-width: 14.7em;
+    @include setFontClashGrotest500(60px, 0.9, -0.02em, getColorBlack());
+}
+.welcome_text {
+    margin-top: 32px;
+    max-width: 570px;
+    @include setFontPublicSans400(16px, 1.255, -0.01em, getColorBlack());
+    text-align: center;
+}
+.welcome_btn {
+    margin-top: 32px;
+    position: relative;
+    z-index: 2;
+}
+.welcome_video {
+    pointer-events: none;
+    margin-top: -32px;
+    min-width: 760px;
+    width: 100%;
+    max-width: 1055px;
+    clip-path: inset(2px 2px);
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: center bottom;
+    mix-blend-mode: darken;
+}
+
+@include -screen-md {
+    .welcome {
+        padding-top: 60px;
+    }
+    .welcome_title {
+        font-size: 44px;
+    }
+    .welcome_text {
+        margin-top: 24px;
+    }
+}
+
+@include -screen-sm {
+    .welcome_wrapper {
+        padding: 85px 16px 22px;
+    }
+    .welcome_title {
+        font-size: 36px;
+    }
+    .welcome_video {
+        margin-top: -20px;
+    }
+}
