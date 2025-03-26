@@ -10,8 +10,8 @@ export const Disclaimer: React.FC = () => {
             <div className={css.wrapper}>
                 <p className={css.content}>
                     {t('disclaimer.subtitle')}
-                    <a href="https://github.com/taikoxyz/website-v2" target="_blank" rel="noopener noreferrer" className={css.link}>
-                        https://github.com/taikoxyz/website-v2
+                    <a href="https://github.com/taikoxyz/website-v3" target="_blank" rel="noopener noreferrer" className={css.link}>
+                        https://github.com/taikoxyz/website-v3
                     </a>.
                 </p>
             </div>
