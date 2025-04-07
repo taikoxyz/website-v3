@@ -1,0 +1,114 @@
+.alertContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.alertButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 30px;
+  height: 32px;
+  width: 32px;
+  &.active {
+      background-color: #000000;
+    }
+}
+
+.bell {
+  width: 20px;
+  height: 20px;
+  padding-top: 2px;
+}
+
+.dropdown {
+  position: absolute;
+  right: 50%;
+  top: calc(100% + 16px);
+  transform: translateX(-50%);
+  width: 310px;
+  background: #ffffff;
+  border-radius: 24px;
+  z-index: 1000;
+  margin-top: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 27px 0 0 0;
+}
+
+.dropdownHeader {
+  padding: 0 24px 0 24px;
+  h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $kFontClashGrotesk;
+  }
+}
+
+.alertsList {
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 24px 24px 24px;
+}
+
+.topicItem {
+  display: flex;
+  align-items: center;
+  color: #6B727F;
+  font-size: 14px;
+  font-family: 'Public Sans';
+  font-weight: 500;
+}
+
+.checkIcon {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  color: #6B6B6B;
+}
+
+.dropdownButtonContainer {
+  padding: 12px 24px;
+  background-color: #E81899;
+  text-align: center;
+  border-radius: 30px;
+  width: 220px;
+  margin: 0 24px 0 24px;
+}
+
+.dropdownButtonText {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Public Sans';
+}
+
+.dropdownCard {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.dropdownCardHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdownContent {
+  padding-bottom: 40px;
+}
+
+  
+  
