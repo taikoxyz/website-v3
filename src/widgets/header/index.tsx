@@ -7,6 +7,7 @@ import { MediaQuery } from "shared/ui/media-query";
 import Sprite from "shared/ui/sprite";
 import { HeaderNavigation } from "./ui";
 import css from "./header.module.scss";
+import { AlertCard } from "shared/components/alert_card";
 
 export const Header: React.FC = () => {
     const [{ menuActive }, , { setStateValue }] = useApp();
@@ -24,8 +25,13 @@ export const Header: React.FC = () => {
 
                     <MediaQuery query="(min-width: 1024px)" children={<HeaderNavigation />} />
 
-                    <div className={css.header_socials}>
-                        <Socials />
+                    <div className={css.header_right_actions}>
+                        <div className={css.header_alert}>
+                            <AlertCard />
+                        </div>
+                        <div className={css.header_socials}>
+                            <Socials />
+                        </div>
                     </div>
 
                     <button

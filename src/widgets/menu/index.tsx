@@ -10,6 +10,7 @@ import { MediaQuery } from "shared/ui/media-query";
 import Sprite from "shared/ui/sprite";
 import { MenuLinkGroup } from "./ui";
 import css from "./menu.module.scss";
+import { AlertMenuItem } from "./ui/MenuLinkGroup/alertMenu";
 
 export const Menu: React.FC = () => {
     const socials = useTranslationObject<IFooterSocial[]>("socials", "footer");
@@ -45,6 +46,9 @@ export const Menu: React.FC = () => {
                                         key={group.name}
                                     />
                                 ))}
+                                <div className={css.menu_alert}>
+                                    <AlertMenuItem />
+                                </div>
                             </nav>
 
                             <h3
