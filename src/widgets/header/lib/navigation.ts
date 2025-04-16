@@ -41,7 +41,7 @@ export const headerNavigation: INavItem[] = [
             ],
             [
                 {
-                    name: "Block explorers",
+                    name: "Block Explorers",
                     icon: "/img/header/explorers.svg",
                     children: [
                         {
@@ -86,7 +86,7 @@ export const headerNavigation: INavItem[] = [
                     icon: "/img/header/docs.svg",
                 },
                 {
-                    name: "Block explorers",
+                    name: "Block Explorers",
                     icon: "/img/header/explorers.svg",
                     href: "",
                 },
