@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                         </div>
                         <div className={css.footer_nav}>
                             <div className={css.footer_nav_inner}>
-                                {navigation && navigation.map((group) => (
+                                {navigation.map((group) => (
                                     <div className={css.footer_nav_group} key={group.name}>
                                         <p className={css.footer_nav_title}>{group.name}</p>
                                         <div className={css.footer_nav_list}>

@@ -5,7 +5,7 @@ import { useApp } from "app/providers/withApp";
 import { Socials } from "shared/components/Socials";
 import { MediaQuery } from "shared/ui/media-query";
 import Sprite from "shared/ui/sprite";
-import { HeaderNavigation } from "./ui";
+import { HeaderNavigation } from "./ui"; 
 import css from "./header.module.scss";
 import { AlertCard } from "shared/components/alert_card";
 

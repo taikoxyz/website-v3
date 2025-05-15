@@ -36,7 +36,7 @@ export const Menu: React.FC = () => {
                         <div className={css.menu_wrapper}>
                             <h3 className={css.menu_title}>Menu</h3>
                             <nav className={css.menu_nav}>
-                                {navigation && navigation.map((group) => (
+                                {navigation.map((group) => (
                                     <MenuLinkGroup
                                         name={group.name}
                                         links={group.links}

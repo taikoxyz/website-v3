@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Modal } from 'shared/ui/modal2';
 import { withTranslation } from 'app/providers/withTranslation';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { PositionApiEnum, PositionModalEnum } from 'widgets/05-position-screens/lib/types';
+import { PositionApiEnum} from 'widgets/05-position-screens/lib/types';
 import { careerApi } from 'shared/lib/api';
-import { ApplyModal, usePosition } from 'widgets/05-position-screens';
-import { Menu } from 'widgets/menu';
-import { Header } from 'widgets/old/header';
-import { Footer } from 'widgets/old/footer';
+import { usePosition } from 'widgets/05-position-screens';
+
 import MainLayout from 'widgets/layouts/main-layout';
 import * as PositionScreens from 'widgets/05-position-screens';
 import css from './position.module.scss';
+import { DefaultLayout } from 'widgets/layouts/default-layout';
+import { partialApi } from 'shared/lib/api/partials.api';
 
 const Position: NextPage = () => {
     const position = usePosition();
@@ -27,16 +26,12 @@ const Position: NextPage = () => {
             title={`${position.title} – Taiko`}
             className={css.position}
         >
-            <Menu />
-            <Modal name={PositionModalEnum.APPLY_POS} children={<ApplyModal />} />
-            <div className={css.header}>
-                <Header theme="dark" />
-            </div>
+            <DefaultLayout>
             <div className={css.gap}>
                 <PositionScreens.Hero />
                 <PositionScreens.Content />
             </div>
-            <Footer />
+            </DefaultLayout>
         </MainLayout>
     );
 }
@@ -52,6 +47,11 @@ export const getServerSideProps: GetServerSideProps = withTranslation(
             queryKey: [PositionApiEnum.POSITION],
             queryFn: () => careerApi.getOne(slug)
         });
+
+        await queryClient.prefetchQuery({
+                    queryKey: ["navigation"],
+                    queryFn: () => partialApi.navigation(),
+                });
 
         if(!queryClient.getQueryData) {
             return {

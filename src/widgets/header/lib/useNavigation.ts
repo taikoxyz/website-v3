@@ -10,7 +10,7 @@ export function useNavigation() {
 export function useNavigationOneLevel() {
     const data = useNavigation();
     const navigation = React.useMemo(() => {
-        return data?.map((item) => {
+        return data.map((item) => {
             const links: NavLink[] = [];
 
             for (const { children, ...data } of item.links) {
