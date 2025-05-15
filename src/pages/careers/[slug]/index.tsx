@@ -27,10 +27,10 @@ const Position: NextPage = () => {
             className={css.position}
         >
             <DefaultLayout>
-            <div className={css.gap}>
-                <PositionScreens.Hero />
-                <PositionScreens.Content />
-            </div>
+                <div className={css.gap}>
+                    <PositionScreens.Hero />
+                    <PositionScreens.Content />
+                </div>
             </DefaultLayout>
         </MainLayout>
     );
