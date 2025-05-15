@@ -9,13 +9,12 @@ export function useNavigation() {
 
 export function useNavigationOneLevel() {
     const data = useNavigation();
-
     const navigation = React.useMemo(() => {
         return data.map((item) => {
             const links: NavLink[] = [];
 
-            for(const { children, ...data } of item.links) {
-                if(children.length > 0) {
+            for (const { children, ...data } of item.links) {
+                if (children.length > 0) {
                     links.push(...children as NavLink[])
                 } else {
                     links.push(data as NavLink);
@@ -26,7 +25,6 @@ export function useNavigationOneLevel() {
         })
 
     }, [data]);
-
     return navigation;
 }
 
@@ -41,26 +39,26 @@ export function useNavigationHeader() {
         () => {
             const nav: NavHeader[] = [];
 
-            for(const { links, ...item } of data) {
+            for (const { links, ...item } of data) {
                 const currentLinks: NavLink[][] = [];
 
                 let name = links[0].column;
                 let templinks: NavLink[] = [];
 
-                for(const link of links) {
-                    if(name === link.column) {
+                for (const link of links) {
+                    if (name === link.column) {
                         templinks.push(link);
                         continue;
                     } else {
                         name = link.column;
-                        if(templinks.length > 0) {
+                        if (templinks.length > 0) {
                             currentLinks.push(templinks);
                             templinks = [link];
                         }
                     }
                 }
 
-                if(templinks.length > 0) {
+                if (templinks.length > 0) {
                     currentLinks.push(templinks);
                 }
 
@@ -68,7 +66,7 @@ export function useNavigationHeader() {
             }
 
             return nav;
-        }, 
+        },
         [data]
     );
 

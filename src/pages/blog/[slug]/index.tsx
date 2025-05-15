@@ -6,18 +6,16 @@ import { withTranslation } from 'app/providers/withTranslation';
 import { blogApi } from 'shared/lib/api';
 import { useArticle } from 'widgets/09-article-screens';
 import { ArticleApiEnum } from 'widgets/09-article-screens/lib/types';
-import { Footer } from 'widgets/old/footer';
-import { Header } from 'widgets/old/header';
 import MainLayout from 'widgets/layouts/main-layout';
 import * as ArticleScreens from 'widgets/09-article-screens';
 import { SideLayout } from 'widgets/layouts/side-layout';
-import { Menu } from 'widgets/menu';
 import { LatestArticles } from 'widgets/09-article-screens';
 import { IBlog } from 'shared/lib/types';
 import css from './article.module.scss';
-import Head from 'next/head';
 import { fileServerPath } from 'shared/lib/utils/file-server-path';
 import { getArticleText } from 'entities/article/lib/getArticleText';
+import { DefaultLayout } from 'widgets/layouts/default-layout';
+import { partialApi } from 'shared/lib/api/partials.api';
 
 const Article: NextPage = () => {
     const article = useArticle();
@@ -30,32 +28,26 @@ const Article: NextPage = () => {
                 image: fileServerPath(article.image.url)
             }}
         >
-            <Head>
-                <style dangerouslySetInnerHTML={{
-                    __html: ` html { scroll-behavior: smooth; } `
-                }} />
-            </Head>
-            <Menu />
-            <Header />
-            <div className={css.gap}>
-                <SideLayout
-                    classNames={{
-                        main: css.children
-                    }}
-                    sideElement={<ArticleScreens.Side />}
-                    children={
-                        <>
-                            <ArticleScreens.Hero />
-                            <ArticleScreens.Preview />
-                            <ArticleScreens.Content />
-                            <ArticleScreens.Apply />
-                            <ArticleScreens.Links />
-                        </>
-                    }
-                />
-                <LatestArticles />
-            </div>
-            <Footer />
+            <DefaultLayout>
+                <div className={css.gap}>
+                    <SideLayout
+                        classNames={{
+                            main: css.children
+                        }}
+                        sideElement={<ArticleScreens.Side />}
+                        children={
+                            <>
+                                <ArticleScreens.Hero />
+                                <ArticleScreens.Preview />
+                                <ArticleScreens.Content />
+                                <ArticleScreens.Apply />
+                                <ArticleScreens.Links />
+                            </>
+                        }
+                    />
+                    <LatestArticles />
+                </div>
+            </DefaultLayout>
         </MainLayout>
     );
 }
@@ -94,6 +86,10 @@ export const getServerSideProps: GetServerSideProps = withTranslation(
             queryFn: () => blogApi.getAll(query)
         })
 
+        await queryClient.prefetchQuery({
+                        queryKey: ["navigation"],
+                        queryFn: () => partialApi.navigation(),
+                    });
 
         return {
             props: {

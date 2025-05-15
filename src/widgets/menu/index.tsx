@@ -21,7 +21,6 @@ export const Menu: React.FC = () => {
     useEffect(() => {
         document.body.style.overflow = menuActive ? "hidden" : "";
     }, [menuActive]);
-
     return (
         <MediaQuery
             query="(max-width: 768px)"
@@ -36,7 +35,6 @@ export const Menu: React.FC = () => {
                     <menu className={css.menu}>
                         <div className={css.menu_wrapper}>
                             <h3 className={css.menu_title}>Menu</h3>
-
                             <nav className={css.menu_nav}>
                                 {navigation.map((group) => (
                                     <MenuLinkGroup
