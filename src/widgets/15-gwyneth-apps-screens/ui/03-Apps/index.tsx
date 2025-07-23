@@ -1,13 +1,13 @@
-import React from "react";
 import dayjs from "dayjs";
-import { getAppsCategories, getAppsTypes, getFilteredApps, useGwynethAppsData } from "widgets/15-gwyneth-apps-screens/lib";
 import { ProjectItem } from "entities/project";
+import React from "react";
 import { Button } from "shared/components/@buttons/button";
 import { TaikoSelect } from "shared/components/taiko-select";
 import { fileServerPath } from "shared/lib/utils/file-server-path";
 import { Input } from "shared/ui/input";
-import { AppsFilter } from "../../lib";;
 import Sprite from "shared/ui/sprite";
+import { getAppsCategories, getAppsTypes, getFilteredApps, useGwynethAppsData } from "widgets/15-gwyneth-apps-screens/lib";
+import { AppsFilter } from "../../lib";
 import css from "./Apps.module.scss";
 
 export const Apps: React.FC = () => {
@@ -106,7 +106,7 @@ export const Apps: React.FC = () => {
 
                     <p className={css.apps_lastUpdate}>
                         <Sprite.Default icon="timer" />
-                        <span>Last updated on December {dayjs(updatedAt).format("MMM DD, YYYY")}</span>
+                        <span>Last updated on {dayjs(updatedAt).format("MMM DD, YYYY")}</span>
                     </p>
 
                     {renderList.length < apps_list.length && (
