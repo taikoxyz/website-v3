@@ -105,7 +105,7 @@ export const headerNavigation: INavItem[] = [
                 },
                 {
                     name: "Aragon",
-                    href: "https://hekla.dao.taiko.xyz/",
+                    href: "https://dao.taiko.xyz/",
                     icon: "/img/header/aragon.svg",
                 },
             ],
