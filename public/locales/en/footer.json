@@ -62,9 +62,9 @@
             "name": "twitter",
             "url": "https://twitter.com/taikoxyz"
         }, {
-            "icon": "gsocial:mirror",
-            "name": "mirror",
-            "url": "https://taiko.mirror.xyz/"
+            "icon": "gsocial:paragraph",
+            "name": "paragraph",
+            "url": "https://paragraph.com/@taiko-labs"
         }, {
             "icon": "gsocial:taiko",
             "name": "forum",
