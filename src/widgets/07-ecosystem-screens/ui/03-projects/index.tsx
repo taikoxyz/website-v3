@@ -1,14 +1,15 @@
-import React, { useMemo } from 'react';
+import { useInfiniteQuery, useQueries, useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import Sprite from 'shared/ui/sprite';
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
-import { EcosystemApiEnum } from 'widgets/07-ecosystem-screens/lib/types';
-import { projectApi } from 'shared/lib/api';
-import { flatProjects, getProjectsQuery } from 'widgets/07-ecosystem-screens/lib';
+import { useRouter } from 'next/router';
+import React, { useMemo } from 'react';
 import { Button } from 'shared/components/@buttons/button';
-import { IBaseFields, IProjectsResponse } from 'shared/lib/types';
+import { projectApi } from 'shared/lib/api';
+import { IBaseFields, IProject, IProjectsResponse } from 'shared/lib/types';
+import Sprite from 'shared/ui/sprite';
+import { flatProjects, getProjectsQuery } from 'widgets/07-ecosystem-screens/lib';
+import { PRIORITY_PROJECT_IDS } from 'widgets/07-ecosystem-screens/lib/priorityProjects';
+import { EcosystemApiEnum } from 'widgets/07-ecosystem-screens/lib/types';
 import { useEcosystemFilters } from 'widgets/07-ecosystem-screens/provider';
 import { ProjectsList } from '../03.01-projects-list';
 import css from './projects.module.scss';
@@ -21,6 +22,21 @@ export const Projects: React.FC = () => {
     const { data: lastProject } = useQuery<IBaseFields>({
         queryKey: [EcosystemApiEnum.LAST_PROJECT],
     });
+
+    // Fetch priority projects separately
+    const priorityProjectQueries = useQueries({
+        queries: PRIORITY_PROJECT_IDS.map(id => ({
+            queryKey: [EcosystemApiEnum.PRIORITY_PROJECTS, id],
+            queryFn: () => projectApi.getOne(id),
+            staleTime: Infinity,
+        }))
+    });
+
+    const priorityProjects = useMemo(() => {
+        return priorityProjectQueries
+            .map(query => query.data)
+            .filter((project): project is IProject => project !== undefined);
+    }, [priorityProjectQueries]);
 
     const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery<IProjectsResponse>({
         queryKey: [
@@ -41,10 +57,16 @@ export const Projects: React.FC = () => {
         },
     });
 
-    const projects = useMemo(
-        () => flatProjects(data?.pages || []),
-        [data]
-    );
+    const projects = useMemo(() => {
+        const paginatedProjects = flatProjects(data?.pages || []);
+
+        // Filter out priority projects from paginated results to avoid duplicates
+        const priorityProjectIds = new Set(priorityProjects.map(p => p.id));
+        const filteredProjects = paginatedProjects.filter(p => !priorityProjectIds.has(p.id));
+
+        // Combine: priority projects first, then paginated projects
+        return [...priorityProjects, ...filteredProjects];
+    }, [data, priorityProjects]);
 
     return (
         <section className={css.projects}>
