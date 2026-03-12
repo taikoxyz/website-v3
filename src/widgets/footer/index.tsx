@@ -13,7 +13,10 @@ export const Footer: React.FC = () => {
             <div className="container">
                 <div className={css.footer_wrapper}>
                     <p className={css.footer_title}>
-                        Join the taiko <b>community</b>
+                        Join the taiko{" "}
+                        <a href="https://community.taiko.xyz" target="_blank" rel="noopener noreferrer">
+                            <b>community</b>
+                        </a>
                     </p>
                     <FooterSocials />
                     <div className={css.footer_row}>
