@@ -1,0 +1,12 @@
+.gap {
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media screen and (max-width: $kTabletM) {
+    .gap {
+        padding-top: 35px;
+    }
+}
