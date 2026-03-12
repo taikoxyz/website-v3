@@ -65,6 +65,8 @@ export const Journey: React.FC = () => {
         { scope: journeyRef }
     );
 
+    if (!data) return null;
+
     return (
         <section className={css.journey} ref={journeyRef} id={HOME_PAG.JOURNEY}>
             <div className={css.journey_content}>
