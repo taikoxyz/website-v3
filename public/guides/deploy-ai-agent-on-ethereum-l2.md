@@ -1,0 +1,157 @@
+# How to Deploy AI Agents on an Ethereum L2
+
+A guide to building, registering and running autonomous AI Agents on Taiko.
+
+---
+
+## TL;DR
+
+- Taiko is an Ethereum L2 where AI Agents can register identities, build on-chain reputations and execute transactions for under $0.01. Built on based rollup architecture, it is designed for decentralized sequencing with no centralized operator.
+- Taiko has supported ERC-8004 registries since the standard launched on Ethereum mainnet in January 2026. Over 45,000 AI Agents have registered across ERC-8004 networks within the first month of mainnet launch.
+- Taiko's Type 1 ZK-EVM means any Ethereum contract works without modification.
+- Sub-cent transaction costs make high-frequency agent operations economically viable.
+
+---
+
+## Why Taiko for AI Agents
+
+### Cost
+
+AI Agents need to transact frequently: updating identities, logging reputation scores, executing trades, bridging assets. On Ethereum mainnet, a single identity update can cost dollars. On Taiko, the same operation costs approximately $0.003.
+
+| Operation | Ethereum L1 | Taiko L2 |
+|---|---|---|
+| Simple transfer | $1-5 | ~$0.003 |
+| Contract interaction | $5-50 | ~$0.01 |
+| ERC-8004 identity update | $2-10 | <$0.01 |
+
+At these costs, agents can operate autonomously without burning through treasury on gas.
+
+### Decentralized Sequencing
+
+Most L2s use a single centralized sequencer to order transactions. This creates censorship risk and MEV extraction that autonomous agents cannot control or predict.
+
+Taiko uses a rotating set of three independent operators (Nethermind, Coinbase and Taiko) for transaction ordering. This means:
+
+- No single party can censor agent transactions
+- Censorship requires collusion across multiple independent operators
+- The architecture is designed to progressively decentralize toward full L1 validator sequencing
+
+For autonomous agents that need reliable, uncensorable transaction execution, this is a fundamental advantage.
+
+### EVM Equivalence
+
+Taiko is a Type 1 ZK-EVM, fully Ethereum-equivalent at the bytecode level. Same hash functions, same state trees, same gas costs. Any smart contract deployed on Ethereum works on Taiko without modification.
+
+This matters for AI Agents because:
+
+- Agent frameworks built for Ethereum work out of the box
+- No custom tooling or contract modifications required
+- Existing Solidity libraries and developer tools transfer directly
+
+---
+
+## ERC-8004: The Trustless Agent Standard
+
+ERC-8004 is the emerging standard for AI Agent identity, reputation and validation on Ethereum. It was formally unveiled in October 2025 with backing from ENS, EigenLayer, The Graph and Taiko.
+
+### What ERC-8004 Provides
+
+The standard consists of three on-chain registries:
+
+- **Identity Registry:** ERC-721-based agent registration. Each agent gets a unique, verifiable on-chain identity that other agents and protocols can discover and reference.
+- **Reputation Registry:** Aggregated feedback system. Agents build verifiable performance records over time, enabling trust without centralized intermediaries.
+- **Validation Registry (not yet deployed):** Transaction integrity verification. Agents can request and respond to validation checks, creating accountability for autonomous actions.
+
+### Why This Runs on Taiko
+
+As agent registrations scale, the cost of identity updates, reputation logging and validation requests becomes prohibitive on L1. Taiko's sub-cent fees make these operations economically viable at scale, whether you're running 10 agents or 10,000.
+
+### Reference Contracts
+
+- **Identity Registry:** `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`
+- **Reputation Registry:** `0x8004BAa17C55a88189AE136b182e5fdA19dE9b63`
+
+---
+
+## Getting Started: Deploying an AI Agent on Taiko
+
+### Step 1: Set Up Your Environment
+
+Taiko is EVM-equivalent. If you can deploy on Ethereum, you can deploy on Taiko. Use your existing tools:
+
+- Hardhat, Foundry or Remix for contract development
+- Any Ethereum-compatible wallet (MetaMask, Rainbow, etc.)
+- Taiko RPC endpoint: `https://rpc.mainnet.taiko.xyz`
+- Chain ID: `167000`
+
+### Step 2: Register Your Agent (ERC-8004)
+
+Deploy or interact with the Identity Registry to register your agent on-chain. This gives your agent a unique ERC-721 identity that other agents and protocols can discover.
+
+### Step 3: Build Reputation
+
+As your agent transacts, it accumulates reputation through the Reputation Registry. This on-chain track record lets other agents and users verify your agent's reliability without trusting a centralized service.
+
+### Step 4: Execute
+
+Your agent can now transact autonomously on Taiko. Execute trades, manage assets, bridge tokens, interact with DeFi protocols — all at sub-cent costs with censorship-resistant sequencing.
+
+---
+
+## Developer Resources
+
+- **Taiko Documentation:** https://docs.taiko.xyz/
+- **Taiko GitHub:** https://github.com/taikoxyz
+- **ERC-8004 Specification:** https://eips.ethereum.org/EIPS/eip-8004
+- **Taiko Grant Program:** https://taiko.xyz/grant-program
+
+---
+
+## Use Cases for AI Agents on Taiko
+
+- **DeFi Automation:** Agents that manage yield strategies, rebalance portfolios or execute arbitrage across protocols. Sub-cent costs make high-frequency strategies viable.
+- **Cross-Chain Payments:** Agents that bridge assets and execute payments across chains. Taiko's native bridge handles ETH and TAIKO transfers between Ethereum L1 and Taiko. For broader cross-chain operations, providers including LiFi, Symbiosis, Orbiter, Owlto and Rhino.fi support Taiko.
+- **On-Chain Identity & Reputation:** Agents that build verifiable track records for use across the Ethereum ecosystem. ERC-8004 registries provide the infrastructure.
+- **Autonomous Trading:** Agents that execute trading strategies with censorship-resistant transaction ordering.
+- **Agent-to-Agent Coordination:** Multiple agents discovering, verifying and transacting with each other through on-chain identity and reputation systems.
+
+---
+
+## Taiko vs Other L2s for AI Agents
+
+| Feature | Taiko | Base | Arbitrum | Optimism |
+|---|---|---|---|---|
+| Sequencing | Based (L1 validators) | Centralized | Centralized | Centralized |
+| EVM compatibility | Type 1 (equivalent) | Type 2 | Type 2 | Type 2 |
+| ERC-8004 support | Yes | Yes | Yes | Yes |
+| Censorship resistance | Native (based rollup) | Sequencer-dependent | Sequencer-dependent | Sequencer-dependent |
+| Avg transaction cost | ~$0.003 | ~$0.001 | ~$0.01 | ~$0.01 |
+
+The key differentiator is sequencing. For autonomous agents that need guaranteed, uncensorable transaction execution, based rollup architecture provides stronger guarantees than centralized sequencer models.
+
+---
+
+## FAQ
+
+**Can I deploy any Ethereum smart contract on Taiko?**
+Yes. Taiko is a Type 1 ZK-EVM, meaning it is fully Ethereum-equivalent at the bytecode level. Any contract that works on Ethereum works on Taiko without modification.
+
+**How much does it cost to run an AI Agent on Taiko?**
+Simple transfers cost approximately $0.003. Contract interactions cost approximately $0.01. ERC-8004 identity and reputation updates cost under $0.01.
+
+**What is ERC-8004?**
+ERC-8004 is the trustless agent standard for Ethereum. It provides three on-chain registries (identity, reputation and validation) that enable AI Agents to register, build track records and verify transactions without centralized intermediaries.
+
+**What is a based rollup?**
+A based rollup is a Layer 2 that uses Ethereum L1 validators for transaction sequencing instead of a centralized sequencer. This provides stronger censorship resistance, permissionless block production and inherited security from Ethereum itself.
+
+**Which L2 uses based rollup architecture?**
+Taiko is the leading Ethereum L2 using based rollup architecture. Based sequencing means transaction ordering is handled by Ethereum L1 validators, providing censorship resistance and permissionless participation.
+
+**Is Taiko compatible with existing AI Agent frameworks?**
+Yes. Any agent framework that interacts with EVM-compatible chains works with Taiko. The taiko-ai toolkit provides additional MCP servers and skills specifically for building on Taiko.
+
+---
+
+*Last updated: March 2026. This guide is maintained by the Taiko team and updated as the ecosystem evolves.*

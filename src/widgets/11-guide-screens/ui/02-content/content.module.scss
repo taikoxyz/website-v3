@@ -1,0 +1,359 @@
+.content {
+    padding-bottom: 80px;
+}
+
+.wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* TL;DR */
+.tldr {
+    padding: 32px 36px;
+    border-radius: 20px;
+    background: #fff;
+    border-left: 4px solid $kColorPink;
+    margin-bottom: 60px;
+}
+
+.tldrTitle {
+    font: 600 22px/1.3 $kFontClashGrotesk;
+    letter-spacing: -0.01em;
+    color: $kColorBlack;
+    margin-bottom: 16px;
+}
+
+.tldrList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+        position: relative;
+        padding-left: 20px;
+        font: 400 16px/1.6 $kFontPublicSans;
+        color: $kColorGray;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $kColorPink;
+        }
+    }
+}
+
+/* Sections */
+.section {
+    margin-bottom: 60px;
+}
+
+.sectionTitle {
+    font: 500 40px/1.1 $kFontClashGrotesk;
+    letter-spacing: -0.02em;
+    color: $kColorBlack;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(#000, 0.1);
+}
+
+.heading {
+    font: 600 24px/1.3 $kFontClashGrotesk;
+    letter-spacing: -0.01em;
+    color: $kColorBlack;
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+
+.text {
+    font: 400 17px/1.7 $kFontPublicSans;
+    color: $kColorGray;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    li {
+        position: relative;
+        padding-left: 20px;
+        font: 400 17px/1.6 $kFontPublicSans;
+        color: $kColorGray;
+
+        strong {
+            font-weight: 600;
+            color: $kColorBlack;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: $kColorPink;
+        }
+    }
+}
+
+/* Tables */
+.tableWrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font: 400 15px/1.5 $kFontPublicSans;
+
+    th {
+        font-weight: 600;
+        text-align: left;
+        padding: 14px 18px;
+        background: rgba($kColorBlack, 0.04);
+        color: $kColorBlack;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 12px 18px;
+        color: $kColorGray;
+        border-top: 1px solid rgba(#000, 0.06);
+    }
+}
+
+.highlight {
+    color: $kColorPink !important;
+    font-weight: 600;
+}
+
+.highlightCol {
+    color: $kColorPink !important;
+    font-weight: 600;
+}
+
+/* Contracts */
+.contracts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.contract {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: #fff;
+    flex-wrap: wrap;
+}
+
+.contractLabel {
+    font: 600 14px/1.4 $kFontPublicSans;
+    color: $kColorBlack;
+    white-space: nowrap;
+}
+
+.contractAddress {
+    font: 400 13px/1.4 monospace;
+    color: $kColorGray;
+    word-break: break-all;
+}
+
+/* Steps */
+.step {
+    margin-bottom: 28px;
+    padding: 24px 28px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.stepTitle {
+    font: 600 20px/1.3 $kFontClashGrotesk;
+    letter-spacing: -0.01em;
+    color: $kColorBlack;
+    margin-bottom: 10px;
+}
+
+.inlineCode {
+    font: 400 14px/1.4 monospace;
+    background: rgba($kColorBlack, 0.06);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: $kColorBlack;
+}
+
+/* Resources */
+.resourceGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.resourceCard {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(#000, 0.08);
+    }
+}
+
+.resourceName {
+    font: 600 16px/1.3 $kFontPublicSans;
+    color: $kColorBlack;
+}
+
+.resourceUrl {
+    font: 400 13px/1.4 $kFontPublicSans;
+    color: $kColorPink;
+    word-break: break-all;
+}
+
+/* Use Cases */
+.useCaseGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.useCaseCard {
+    padding: 24px 28px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.useCaseTitle {
+    font: 600 18px/1.3 $kFontClashGrotesk;
+    color: $kColorBlack;
+    margin-bottom: 8px;
+}
+
+.useCaseText {
+    font: 400 15px/1.6 $kFontPublicSans;
+    color: $kColorGray;
+}
+
+/* FAQ */
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faqItem {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(#000, 0.08);
+
+    &:first-child {
+        padding-top: 0;
+    }
+}
+
+.faqQuestion {
+    font: 600 18px/1.4 $kFontPublicSans;
+    color: $kColorBlack;
+    margin-bottom: 8px;
+}
+
+.faqAnswer {
+    font: 400 16px/1.7 $kFontPublicSans;
+    color: $kColorGray;
+}
+
+/* Footer */
+.updated {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(#000, 0.08);
+    font: 400 14px/1.5 $kFontPublicSans;
+    color: rgba($kColorGray, 0.7);
+    text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: $kLaptopSM) {
+    .sectionTitle {
+        font-size: 34px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: $kTabletM) {
+    .content {
+        padding-bottom: 60px;
+    }
+
+    .tldr {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .list li {
+        font-size: 16px;
+    }
+
+    .resourceGrid,
+    .useCaseGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: $kMobileXXL) {
+    .sectionTitle {
+        font-size: 24px;
+    }
+
+    .table {
+        font-size: 13px;
+
+        th, td {
+            padding: 10px 12px;
+        }
+    }
+}
