@@ -69,8 +69,8 @@ As agent registrations scale, the cost of identity updates, reputation logging a
 
 ### Reference Contracts
 
-- **Identity Registry:** `0x8004A818BFB912233c491871b3d84c89A494BD9e`
-- **Reputation Registry:** `0x8004B663056A597Dffe9eCcC1965A193B7388713`
+- **Identity Registry:** `0x8004A169FB4a3325136EB29fA0ceB6D2e539a432`
+- **Reputation Registry:** `0x8004BAa17C55a88189AE136b182e5fdA19dE9b63`
 
 ---
 
