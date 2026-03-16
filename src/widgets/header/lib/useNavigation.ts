@@ -4,7 +4,7 @@ import { NavItem, NavLink } from "shared/lib/types/navigation.types";
 
 export function useNavigation() {
     const { data } = useQuery<NavItem[]>({ queryKey: ["navigation"] });
-    return data!;
+    return data ?? [];
 }
 
 export function useNavigationOneLevel() {

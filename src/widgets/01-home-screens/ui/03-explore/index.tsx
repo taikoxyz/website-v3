@@ -9,7 +9,7 @@ import Image from "shared/ui/image";
 import css from "./explore.module.scss";
 
 export const Explore: React.FC = () => {
-    const [alethia, gwyneth] = useHomeData().explore_screens;
+    const data = useHomeData();
     const exploreRef = React.useRef<HTMLDivElement>(null);
 
     const handleMoveEnterLeft = () => {
@@ -68,6 +68,10 @@ export const Explore: React.FC = () => {
         ),
         []
     );
+
+    if (!data) return null;
+
+    const [alethia, gwyneth] = data.explore_screens;
 
     return (
         <section className={css.explore} ref={exploreRef} id={HOME_PAG.EXPLORE}>

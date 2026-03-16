@@ -48,6 +48,8 @@ export const About: React.FC = () => {
         { scope: aboutRef }
     );
 
+    if (!data) return null;
+
     return (
         <section className={css.about} ref={aboutRef} id={HOME_PAG.ABOUT}>
             <div className={css.about_wrapper}>

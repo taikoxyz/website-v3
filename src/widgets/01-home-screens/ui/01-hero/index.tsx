@@ -54,6 +54,8 @@ export const Hero: React.FC = () => {
         }
     });
 
+    if (!data) return null;
+
     return (
         <section className={css.hero} id={HOME_PAG.HERO}>
             <div className="container">
@@ -61,9 +63,9 @@ export const Hero: React.FC = () => {
                     <h1 className={css.hero_title}>
                         {data.hero_title}
                     </h1>
-                    <WrapperButtonList 
-                        className={css.hero_controls} 
-                        data={data.hero_buttons} 
+                    <WrapperButtonList
+                        className={css.hero_controls}
+                        data={data.hero_buttons}
                     />
                     <div className={css.hero_taiko}>
                         <div className={css.hero_taiko_inner}>

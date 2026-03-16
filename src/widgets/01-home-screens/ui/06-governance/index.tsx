@@ -5,6 +5,8 @@ import css from "./governance.module.scss";
 export const Governance: React.FC = () => {
     const data = useHomeData();
 
+    if (!data) return null;
+
     return (
         <section className={css.governance} id={HOME_PAG.GOVERNANCE}>
             <div className={css.governance_container}>

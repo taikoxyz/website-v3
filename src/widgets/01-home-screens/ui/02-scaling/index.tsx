@@ -119,6 +119,8 @@ export const Scaling: React.FC = () => {
         }
     }, []);
 
+    if (!data) return null;
+
     return (
         <section className={css.scaling} id={HOME_PAG.SCALING}>
             <div id="scaling-wrapper" ref={scalingRef}>
