@@ -1,6 +1,6 @@
-# How to Deploy AI Agents on an Ethereum L2
+# How to Deploy AI Agents on Taiko
 
-A guide to building, registering and running autonomous AI Agents on Taiko.
+Deploy autonomous AI agents on Taiko, an Ethereum L2 with sub-cent fees, ERC-8004 support and censorship-resistant sequencing.
 
 ---
 
