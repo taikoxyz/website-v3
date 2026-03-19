@@ -1,8 +1,8 @@
 {
     "hero": {
         "label": "Guide",
-        "title": "How to Deploy AI Agents on an Ethereum L2",
-        "subtitle": "A guide to building, registering and running autonomous AI Agents on Taiko"
+        "title": "How to Deploy AI Agents on Taiko",
+        "subtitle": "Deploy autonomous AI agents on Taiko, an Ethereum L2 with sub-cent fees, ERC-8004 support and censorship-resistant sequencing."
     },
     "tldr": {
         "title": "TL;DR",
