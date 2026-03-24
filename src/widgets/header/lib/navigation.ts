@@ -137,6 +137,19 @@ export const headerNavigation: INavItem[] = [
                     icon: "/img/header/careers.svg",
                 },
             ],
+            [
+                {
+                    name: "Guides",
+                    icon: "/img/header/docs.svg",
+                    children: [
+                        {
+                            name: "Deploy AI Agents on Taiko",
+                            desc: "ERC-8004, sub-cent fees, censorship-resistant sequencing",
+                            href: "/guides/deploy-ai-agent-on-ethereum-l2",
+                        },
+                    ],
+                },
+            ],
         ],
     },
     {
